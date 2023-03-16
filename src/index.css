@@ -1,13 +1,95 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    
+    .sideBarIcon {
+        @apply relative flex items-center justify-center h-12 w-12 my-4 mx-auto shadow-lg bg-transparent text-primaryHighlight hover:shadow-primaryHighlight rounded-full;
+    }
+    .playerIcon{
+        @apply relative flex items-center justify-center h-24 w-24 mt-6 mx-auto shadow-lg ; 
+    }
+    .playerImage{
+        @apply rounded-full 
+    }
+    .activeStatus{
+        @apply rounded-full bg-green-500 w-6 h-6 absolute right-0 top-[70px] z-10
+    }
+    .serverStatus{
+        @apply rounded-full bg-white w-2 h-2 relative right-6 top-[75px] z-10
+    }
+    .gameRoom{
+        display:flex;
+        width:100px;
+        height:100px;
+        text-align:center;
+        justify-content:center;
+        align-self:center;
+        border:3px solid hsl(321,28%,41%);
+        
+        
+    }
+    .serverName{
+        overflow:hidden;
+        text-align:center;
+        height:100px;
+text-overflow: ellipsis;
+white-space: nowrap;
+    }
+    .activeStatus{
+    box-shadow:
+    0 0 25px 8px rgb(34 197 94 )
+}  
+ .serverStatus{
+    box-shadow:
+    0 0 15px 2px rgb(255 255 255 )
+
+}
+.fightCadeLogo{
+    
+    
+    background:green;
+}
+.mainLayoutContainer{
+     background:url("../public/desktop-backgrounds.jpg");
+     background-position:0px 0px 0px 0px;
+     
+     background-size:cover;
+     position:relative;
+     z-index:1;
+     isolation:isolate;
+      @apply 
+        
+        text-center
+        
+        h-screen 
+        w-full 
+        ml-44
+        
+}
+    .mainLayout{
+      position:relative;
+       width:100%;
+       height:60vh;
+    }
+    .mainLayout::after {
+        content:'';
+        position:absolute;
+        background-color:hsl(311,33%,15%);
+        inset:0;
+        z-index:-1;
+        mix-blend-mode:multiply;
+    }
+    .mainLayoutBottom{
+        background-color:hsl(322,29%,22%);
+        height:100%;
+        
+    }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+
+
+
+
