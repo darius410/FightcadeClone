@@ -11,7 +11,9 @@
 --primary-Highlight:hsl(321,28%,41%);
 --primary-HighlightDim:hsl(321,20%,70%);
 --secondary-Highlight:hsl(176,87%,57%);
-
+--primaryFont:Fjalla One, sans-serif;
+--secondaryFont: Teko, sans-serif;
+--patreon: Kanit , sans-serif;
 
 }
 
@@ -54,15 +56,19 @@
         text-align:center;
         justify-content:center;
         align-self:center;
-        border:3px solid hsl(321,28%,41%);
+        border:4px solid hsl(321,28%,41%);
         position:relative;
         font-size:1rem;
         
     }
    
     .serverName{
-     
-   
+     font-family:var(--primaryFont);
+     font-weight:bold;
+     font-size:0.8rem;
+     line-height:1.1;
+    margin:0px 10px;
+    
     }
     .activeStatus{
     box-shadow:
