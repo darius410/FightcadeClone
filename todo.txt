@@ -1,0 +1,13 @@
+
+Apply media queries for the layout for smaller screens
+
+Sidebar
+--Fix alignment of text of the server rooms to be centered and truncate at a certain length/word break.
+--Find a way to make a good hover effect over the icons
+--find a way to make a hover effect for server rooms
+--make a hover effect for the smaller icons next to server rooms
+--make the height capable of shrinking in the Y axis so the icons dont offset on smaller screens
+
+MAIN LAYOUT
+--Make a hover effect for the button to 1.glow blue on box shadow,2.increase in size,3.change font color
+--make a hover effect for bottom icons to glow blue discord twitter facebook
