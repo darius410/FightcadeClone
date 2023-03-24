@@ -15,13 +15,13 @@ const MainDisplay = () => (
             </div>
 
             
-            <div className="flex flex-col lg:flex-row text-green-200 ">
+            <div className="flex flex-col md:flex-row lg:flex-row text-green-200 ">
                 <div className="">
                     <h1 className=" text-primaryHighlightDim text-3xl lg:text-5xl font-semibold ">WHAT IS FIGHTCADE ?</h1>
                     <h3 className=" text-xl mb-5 lg:text-4xl lg:mt-6 font-semibold hover:text-secondaryHighlight ">About</h3>
                 </div>
 
-                <div className=" lg:mx-36 border-y-2  lg:border-x-2 border-solid border-x-primaryHighlight lg:px-44">
+                <div className=" md:mx-20 lg:mx-36 border-y-2 md:border-y-0 md:border-x-2 lg:border-x-2 md:border-solid lg:border-solid border-x-primaryHighlight lg:px-44">
                 <h1 className=" text-primaryHighlightDim text-3xl lg:text-5xl font-semibold">FIRST TIME HERE ?</h1>
                     <h3 className="text-xl mb-5 lg:text-4xl lg:mt-6 font-semibold hover:text-secondaryHighlight">READ MANUAL</h3>
                 </div>
