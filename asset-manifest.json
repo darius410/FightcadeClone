@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.26c73ddd.css",
+    "main.js": "/static/js/main.1622fd32.js",
+    "static/js/787.6568b257.chunk.js": "/static/js/787.6568b257.chunk.js",
+    "static/media/topbackground2.jpg": "/static/media/topbackground2.3e37031e2e6d08d93574.jpg",
+    "static/media/bottombackgroundgradient.jpg": "/static/media/bottombackgroundgradient.a4f8f873171f1fbd10f9.jpg",
+    "static/media/discord-svg.svg": "/static/media/discord-svg.d467713d20173247db8c.svg",
+    "index.html": "/index.html",
+    "main.26c73ddd.css.map": "/static/css/main.26c73ddd.css.map",
+    "main.1622fd32.js.map": "/static/js/main.1622fd32.js.map",
+    "787.6568b257.chunk.js.map": "/static/js/787.6568b257.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.26c73ddd.css",
+    "static/js/main.1622fd32.js"
+  ]
+}
