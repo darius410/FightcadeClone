@@ -1,7 +1,10 @@
 {
-  "name": "headwind",
+  "name": "fightcadeclone",
   "version": "0.1.0",
+  "main": "index.html",
   "private": true,
+  "homepage": "https://darius410.github.io/FightcadeClone/",
+  "license": "ISC",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -17,7 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -42,9 +46,11 @@
     "@tailwindcss/line-clamp": "^0.4.2",
     "@types/autoprefixer": "^10.2.0",
     "autoprefixer": "^9.8.8",
+    "gh-pages": "^5.0.0",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-nesting": "^11.2.1",
     "postcss-preset-env": "^8.0.1",
     "tailwindcss": "^3.2.7"
   }
 }
+
