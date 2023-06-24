@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "index.html",
   "private": true,
-  "homepage": "https://darius410.github.io/FightcadeClone",
+  "homepage": "https://darius410.github.io/FightcadeClone/",
   "license": "ISC",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
