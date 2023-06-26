@@ -1,14 +1,17 @@
-import Sidebar from "./Sidebar";
-import MainDisplay from "./MainDisplay.js"
-
+// import Sidebar from "./Sidebar";
+// import MainDisplay from "./MainDisplay.js"
+import Register from "./Register.js";
 
 function App() {
   return (
     <div className="flex flex-row">
-      <Sidebar/>
-    <MainDisplay/>
+     {/* <Sidebar/> */}
+
+       <Register/>
+    {/* <MainDisplay/> */}
     </div> 
     
+   
     
     
   );
