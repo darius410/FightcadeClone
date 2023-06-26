@@ -62,7 +62,7 @@ transition:0.5s;
         @apply relative flex items-center justify-center h-12 w-12 my-4 lg:mx-auto shadow-lg bg-transparent text-primaryHighlight  hover:shadow-secondaryHighlightShadow hover:text-secondaryHighlight rounded-full; 
     }
     .discordIcon{
-        @apply bg-discord bg-cover lg:w-[350px] h-[70px] flex hue-rotate-[-270deg] saturate-48  hover:text-secondaryHighlight hover:discordHover;
+        @apply bg-discord md:w-auto md:h-28  bg-cover lg:w-[350px] h-[70px] flex hue-rotate-[-270deg] saturate-48  hover:text-secondaryHighlight hover:discordHover;
     }
     .discordHover{
         filter: brightness(2.01) contrast(0.69) hue-rotate(302deg) saturate(2.52);
