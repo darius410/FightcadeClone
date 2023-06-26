@@ -5,7 +5,7 @@ import Register from "./Register.js";
 function App() {
   return (
     <div className="flex flex-row">
-     {/* <Sidebar/> */}
+     <Sidebar/>
 
        <Register/>
     {/* <MainDisplay/> */}
