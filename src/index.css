@@ -23,18 +23,50 @@
 
 
 @layer components {
-    
-    .sideBarIcon {
-        @apply relative flex items-center justify-center h-12 w-12 my-4 mx-auto shadow-lg bg-transparent text-primaryHighlight hover:shadow-primaryHighlight rounded-full;
+    .removeScroll::-webkit-scrollbar{
+        display:none;
     }
+    .removeScroll{
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+    }
+    .sideBarIcon {
+        @apply relative flex items-center justify-center h-12 w-12 my-4 mx-auto shadow-lg bg-transparent text-primaryHighlight 
+    }
+    .sideBarIcon:after{
+        content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+border-radius:50%;
+
+transition:0.5s;
+transform:scale(1.5);
+z-index:-1;
+    }
+.sideBarIcon:hover::after{
+    transform:scale(0.2);
+    box-shadow:0px 0px 60px var(--primary-HighlightDim);
+    filter:blur(3px);
+}
+.sideBarIcon:hover{
+color:#fff;
+transition:0.5s;
+
+}
+
+
       .SocialIcon{
-        @apply relative flex items-center justify-center h-12 w-12 my-4 mx-auto shadow-lg bg-transparent text-primaryHighlight  hover:shadow-secondaryHighlightShadow hover:text-secondaryHighlight rounded-full; 
+        @apply relative flex items-center justify-center h-12 w-12 my-4 lg:mx-auto shadow-lg bg-transparent text-primaryHighlight  hover:shadow-secondaryHighlightShadow hover:text-secondaryHighlight rounded-full; 
     }
     .discordIcon{
-        @apply bg-discord bg-cover w-[350px] h-[70px] flex hue-rotate-[-270deg] saturate-48  hover:text-secondaryHighlight hover:discordHover;
+        @apply bg-discord md:w-auto md:h-28  bg-cover lg:w-[350px] h-[70px] flex hue-rotate-[-270deg] saturate-48  hover:text-secondaryHighlight hover:discordHover;
     }
     .discordHover{
         filter: brightness(2.01) contrast(0.69) hue-rotate(302deg) saturate(2.52);
+        transition:0.5s;
         
     }
     .playerIcon{
@@ -59,8 +91,30 @@
         border:4px solid hsl(321,28%,41%);
         position:relative;
         font-size:1rem;
-        
+                   
     }
+    .gameRoom:hover{
+        color:#fff;
+        transition:0.5s;
+    }
+    .gameRoom::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+border-radius:50%;
+
+transition:0.5s;
+transform:scale(0.5);
+z-index:-1;
+    }
+  .gameRoom:hover::before{
+    transform:scale(1);
+    box-shadow:0 0 20px var(--primary-HighlightDim);
+    filter:blue(3px);
+  }  
    
     .serverName{
      font-family:var(--primaryFont);
@@ -110,17 +164,20 @@
         text-center
         
         h-screen 
-        w-full 
+        w-full
+        sm:w-4/5
         ml-44
         
 }
     .mainLayout{
+        
          background-image:url("../public/topbackground2.jpg");
          background-size:cover;
       position:relative;
        width:100%;
        height:60vh;
     }
+
     .mainLayout::after {
         content:'';
         position:absolute;
