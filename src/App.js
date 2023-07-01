@@ -1,4 +1,4 @@
-// import Sidebar from "./Sidebar";
+import Sidebar from "./Sidebar";
 // import MainDisplay from "./MainDisplay.js"
 import Register from "./Register.js";
 
