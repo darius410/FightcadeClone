@@ -7,7 +7,7 @@ function App() {
     <div className="flex flex-row">
       <Sidebar/>
     
-    <MainDisplay/> *
+    <MainDisplay/>
     </div> 
     
    
