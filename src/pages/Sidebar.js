@@ -3,11 +3,30 @@ import { VscGear } from "react-icons/vsc";
 import PlayerIcon from '../PlayerIcon'
 // import { useState } from "react";
 import { useRef } from "react";
+import { signOut } from "firebase/auth";
+import { authorize } from "../firebaseconfig";
+import { useNavigate } from "react-router";
 
 
 
 const Sidebar = () => {
    
+
+        // const [isAuth, setIsAuth] = useState(false);
+        
+        const redirect = useNavigate();
+        const signUserOut = () => {
+            signOut(authorize).then(() =>{
+                localStorage.clear()
+                // setIsAuth(false);
+                redirect("/login");
+        })
+
+        }
+    
+    
+
+
     // const [servername, setServerName] = useState(true);
     const servername = useRef(null);
     const secondServer = useRef(null);
@@ -66,9 +85,12 @@ const Sidebar = () => {
                 <PlayerIcon />
             </div>
 
+
+            <button onClick={signUserOut}>Sign Out</button>
+
         </div>
 
-    );
+        );
 };
 
 

@@ -13,7 +13,7 @@ const Sidebar = () => {
     const secondServer = useRef(null);
     const thirdServer =  useRef(null);
      
-    const onFile = () => {
+    const truncate = () => {
         servername.current.innerText = servername.current.innerText.slice(0, 28).toUpperCase() + "...";
         secondServer.current.innerText = secondServer.current.innerText.slice(0, 28).toUpperCase() + "...";
         thirdServer.current.innerText = thirdServer.current.innerText.slice(0, 28).toUpperCase() + "...";
@@ -28,7 +28,7 @@ const Sidebar = () => {
             <ul className="flex-col flex my-2 mx-auto text-primaryHighlight list-disc"  >
                 {/* SERVER ONE */}
                   <span className="serverStatus"></span>
-                <li className="gameRoom my-5 rounded-full list-disc group"onLoad={onFile}>
+                <li className="gameRoom my-5 rounded-full list-disc group"onLoad={truncate}>
                     <img alt="" src="exit.svg" className=" hidden w-auto h-6 absolute left-[103px;] top-3 group-hover:block"  />
                   <button  className="serverName"  id="serverOne" ref={servername}>Street Fighter III 3rd Strike:Fight For Japan </button>
                     <img alt=""  src="./mute.svg" className=" hidden w-auto h-6 absolute left-[103px] top-16 group-hover:block" />
@@ -38,7 +38,7 @@ const Sidebar = () => {
 
                 {/* SERVER TWO */}
                 <span className="serverStatus"></span>
-                <li className="gameRoom my-5 rounded-full list-disc group" onLoad={onFile}>
+                <li className="gameRoom my-5 rounded-full list-disc group" onLoad={truncate}>
                     <img alt="" src="exit.svg" className=" hidden w-auto h-6 absolute left-[103px;] top-3 group-hover:block"  />
                     <button className="serverName" id="serverTwo" ref={secondServer} > The Last Blade 2 / bakumatsu Roman - Dai Ni Maku Gekku No Kenshi  </button>
                     <img alt=""  src="./mute.svg" className=" hidden w-auto h-6 absolute left-[103px] top-16 group-hover:block" />
@@ -46,7 +46,7 @@ const Sidebar = () => {
                 </li>
                 {/* SERVER THREE */}
                 <span className="serverStatus"></span>
-                <li className="gameRoom my-5 rounded-full list-disc group" onLoad={onFile}>
+                <li className="gameRoom my-5 rounded-full list-disc group" onLoad={truncate}>
                     <img alt="" src="exit.svg" className=" hidden w-auto h-6 absolute left-[103px;] top-3 group-hover:block"  />
                   <button className="serverName" id="serverThree" ref={thirdServer} >Rage Of Dragons (NGM -264?) </button>
                     <img alt=""  src="./mute.svg" className=" hidden w-auto h-6 absolute left-[103px] top-16 group-hover:block" />

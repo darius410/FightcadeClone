@@ -1,14 +1,38 @@
+import React from "react";
 import { useRef, useState, useEffect } from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from '../axios/axios';
+import {authorize, provider} from "../firebaseconfig";
+import {signInWithPopup} from "firebase/auth";
 import '../css/RegisterLog.css';
+import {Link} from 'react-router-dom';
+import { useNavigate } from "react-router-dom"; //Handles the redirect to the dashboard after user signs in
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const REGISTER_URL = '/register';
 
-const Login = () => {
+
+
+const Login = ({setIsAuth}) => {
+
+    let navigate = useNavigate();
+
+//this uses firebase with google auth to sign the user in
+//The user has yet to be verified when they are no longer authorized in the app
+
+    const loginToFireBase = () => {
+        signInWithPopup(authorize, provider).then((result) => {
+        localStorage.setItem("isAuth", true);
+        // setIsAuth(true);
+        navigate("/dashboard");
+        });
+
+    };
+  
+
+
     const userRef = useRef(); //This line helps with keeping track of the user focus when input is selected
     const errRef = useRef();// Keeps track of our error handling ,helps with being read by screen readers as well.
 
@@ -167,8 +191,21 @@ const Login = () => {
                             Must match the first password input field.
                         </p>
 
-                        <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
+                        {/* <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button> */}
+                        <button onClick={ loginToFireBase }>Sign In With Google</button>
+                        
                     </form>
+
+                    <p>
+                        Not registered?<br />
+                        <span className="line">
+                     
+                           
+                                    <Link to="/register">Sign Me Up Now!</Link>
+                               
+                          
+                        </span>
+                    </p>
                  
                 </section>
             )}

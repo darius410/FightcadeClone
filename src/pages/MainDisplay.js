@@ -1,10 +1,12 @@
 import { AiFillTwitterCircle } from 'react-icons/ai'
-
 import { MdFacebook } from 'react-icons/md'
 
 
 
 const MainDisplay = () => (
+    
+  
+
      <div className="mainLayoutContainer flex flex-col font-secondary h-[1500px]"> 
   {/* container */}
      <div className="mainLayout flex flex-col place-items-center ">
@@ -81,8 +83,9 @@ const MainDisplay = () => (
 </div>
   
 
-  
+   
 )
+   
 
 
 const SocialIcon = ({icon}) => (
