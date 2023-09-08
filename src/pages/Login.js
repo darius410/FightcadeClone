@@ -1,20 +1,44 @@
+import React from "react";
 import { useRef, useState, useEffect } from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from './axios/axios';
-import './login.css'
+import axios from '../axios/axios';
+import {authorize, provider} from "../firebaseconfig";
+import {signInWithPopup} from "firebase/auth";
+import '../css/RegisterLog.css';
+import {Link} from 'react-router-dom';
+import { useNavigate } from "react-router-dom"; //Handles the redirect to the dashboard after user signs in
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const REGISTER_URL = '/register';
 
-const Register = () => {
-    const userRef = useRef();
-    const errRef = useRef();
+
+
+const Login = ({setIsAuth}) => {
+
+    let navigate = useNavigate();
+
+//this uses firebase with google auth to sign the user in
+//The user has yet to be verified when they are no longer authorized in the app
+
+    const loginToFireBase = () => {
+        signInWithPopup(authorize, provider).then((result) => {
+        localStorage.setItem("isAuth", true);
+        // setIsAuth(true);
+        navigate("/dashboard");
+        });
+
+    };
+  
+
+
+    const userRef = useRef(); //This line helps with keeping track of the user focus when input is selected
+    const errRef = useRef();// Keeps track of our error handling ,helps with being read by screen readers as well.
 
     const [user, setUser] = useState('');
     const [validName, setValidName] = useState(false);
-    const [userFocus, setUserFocus] = useState(false);
+    const [userFocus, setUserFocus] = useState(false);//sets a boolean for user focus
 
     const [pwd, setPwd] = useState('');
     const [validPwd, setValidPwd] = useState(false);
@@ -28,7 +52,7 @@ const Register = () => {
     const [success, setSuccess] = useState(false);
 
     useEffect(() => {
-        userRef.current.focus();
+        userRef.current.focus();  
     }, [])
 
     useEffect(() => {
@@ -88,13 +112,13 @@ const Register = () => {
                 <section>
                     <h1>Success!</h1>
                     <p>
-                        <a href="#">Sign In</a>
+                        <a href="./Dashboard.js">Sign In</a>
                     </p>
                 </section>
             ) : (
                 <section>
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                    <h1>Register</h1>
+                    <h1>Login</h1>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="username">
                             Username:
@@ -167,19 +191,26 @@ const Register = () => {
                             Must match the first password input field.
                         </p>
 
-                        <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
+                        {/* <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button> */}
+                        <button onClick={ loginToFireBase }>Sign In With Google</button>
+                        
                     </form>
+
                     <p>
-                        Already registered?<br />
+                        Not registered?<br />
                         <span className="line">
-                            {/*put router link here*/}
-                            <a href="#">Sign In</a>
+                     
+                           
+                                    <Link to="/register">Sign Me Up Now!</Link>
+                               
+                          
                         </span>
                     </p>
+                 
                 </section>
             )}
         </>
     )
 }
 
-export default Register
+export default Login
