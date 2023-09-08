@@ -46,7 +46,7 @@ const MainDisplay = () => (
 
             {/* middle X */}
 
-                    <img width=" 60px" height="45px" className="mx-6" src="./x.png" alt="X"/>
+                    <img width=" 60px" height="45px" className="mx-6" src="./X.png" alt="X"/>
 
             <p className="font-patreon text-white text-6xl font-medium tracking-widest lg:border-r-8 py-8 lg:pr-8">PATREON</p>
 
