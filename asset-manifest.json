@@ -1,18 +1,16 @@
 {
   "files": {
-    "main.css": "/FightcadeClone/static/css/main.0c3d2e9b.css",
-    "main.js": "/FightcadeClone/static/js/main.0c48a574.js",
-    "static/js/787.821b076d.chunk.js": "/FightcadeClone/static/js/787.821b076d.chunk.js",
+    "main.css": "/FightcadeClone/static/css/main.977ed82b.css",
+    "main.js": "/FightcadeClone/static/js/main.fac70103.js",
     "static/media/topbackground2.jpg": "/FightcadeClone/static/media/topbackground2.3e37031e2e6d08d93574.jpg",
     "static/media/bottombackgroundgradient.jpg": "/FightcadeClone/static/media/bottombackgroundgradient.a4f8f873171f1fbd10f9.jpg",
     "static/media/discord-svg.svg": "/FightcadeClone/static/media/discord-svg.dc404977acf330184cad.svg",
     "index.html": "/FightcadeClone/index.html",
-    "main.0c3d2e9b.css.map": "/FightcadeClone/static/css/main.0c3d2e9b.css.map",
-    "main.0c48a574.js.map": "/FightcadeClone/static/js/main.0c48a574.js.map",
-    "787.821b076d.chunk.js.map": "/FightcadeClone/static/js/787.821b076d.chunk.js.map"
+    "main.977ed82b.css.map": "/FightcadeClone/static/css/main.977ed82b.css.map",
+    "main.fac70103.js.map": "/FightcadeClone/static/js/main.fac70103.js.map"
   },
   "entrypoints": [
-    "static/css/main.0c3d2e9b.css",
-    "static/js/main.0c48a574.js"
+    "static/css/main.977ed82b.css",
+    "static/js/main.fac70103.js"
   ]
 }
