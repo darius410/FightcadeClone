@@ -165,7 +165,7 @@ z-index:-1;
         
         h-screen 
         w-full
-        sm:w-4/5
+       
         ml-44
         
 }
@@ -175,7 +175,7 @@ z-index:-1;
          background-size:cover;
       position:relative;
        width:100%;
-       height:60vh;
+       
     }
 
     .mainLayout::after {
@@ -190,6 +190,7 @@ z-index:-1;
         background-image:url("/bottombackgroundgradient.jpg");
         background-size:cover;
         background-color:hsl(322,29%,22%);
+        background-repeat:repeat-y;
         height:1300px;
         
         

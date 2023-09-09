@@ -191,9 +191,13 @@ const Login = ({setIsAuth}) => {
                             Must match the first password input field.
                         </p>
 
+                                  
+
                         {/* <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button> */}
-                        <button onClick={ loginToFireBase }>Sign In With Google</button>
-                        
+                       <p className="text-center mt-8">- OR -</p>
+                       
+                        <button onClick={ loginToFireBase }>Sign In With Google</button>  
+                      
                     </form>
 
                     <p>

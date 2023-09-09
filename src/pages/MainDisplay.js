@@ -7,7 +7,7 @@ const MainDisplay = () => (
     
   
 
-     <div className="mainLayoutContainer flex flex-col font-secondary h-[1500px]"> 
+     <div className="mainLayoutContainer flex flex-col font-secondary h-full"> 
   {/* container */}
      <div className="mainLayout flex flex-col place-items-center ">
           {/* TOP */}
@@ -18,18 +18,19 @@ const MainDisplay = () => (
 
             
             <div className="flex flex-col md:flex-row lg:flex-row text-green-200 ">
-                <div className="">
+                <div className="mr-5 lg:border-r-2 md:border-solid lg:border-solid border-x-primaryHighlight">
                     <h1 className=" text-primaryHighlightDim text-3xl lg:text-5xl font-semibold ">WHAT IS FIGHTCADE ?</h1>
                     <h3 className=" text-xl mb-5 lg:text-4xl lg:mt-6 font-semibold hover:text-secondaryHighlight ">About</h3>
                 </div>
 
-                <div className=" md:mx-20 lg:mx-36 border-y-2 md:border-y-0 md:border-x-2 lg:border-x-2 md:border-solid lg:border-solid border-x-primaryHighlight lg:px-44">
+                <div className=" mx-10 border-y-2 md:border-y-0  md:border-solid lg:border-solid ">
                 <h1 className=" text-primaryHighlightDim text-3xl lg:text-5xl font-semibold">FIRST TIME HERE ?</h1>
                     <h3 className="text-xl mb-5 lg:text-4xl lg:mt-6 font-semibold hover:text-secondaryHighlight">READ MANUAL</h3>
                 </div>
                 
-                <div>
-                <h1 className=" text-primaryHighlightDim text-3xl lg:text-5xl font-semibold">GOT QUESTIONS ?</h1>
+           
+                <div className=" ml-5 lg:border-l-2 md:border-solid lg:border-solid border-x-primaryHighlight">
+                <h1 className="text-primaryHighlightDim text-3xl lg:text-5xl font-semibold">GOT QUESTIONS ?</h1>
                     <h3 className="text-xl mb-5 lg:text-4xl lg:mt-6 font-semibold hover:text-secondaryHighlight">F.A.Q</h3>
                 </div>
             </div>
@@ -48,7 +49,9 @@ const MainDisplay = () => (
 
             {/* middle X */}
 
-                    <img width=" 60px" height="45px" className="mx-6" src="/X.png" alt="X"/>
+                    <img width=" 60px" height="45px" className="mx-6" src="X.png" alt="X"/>
+                  
+                    
 
             <p className="font-patreon text-white text-6xl font-medium tracking-widest lg:border-r-8 py-8 lg:pr-8">PATREON</p>
 
