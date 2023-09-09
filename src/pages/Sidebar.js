@@ -6,7 +6,9 @@ import { useRef } from "react";
 import { signOut } from "firebase/auth";
 import { authorize } from "../firebaseconfig";
 import { useNavigate } from "react-router";
-
+import IconLogo from "../images/logo.svg"
+import exit from "../images/exit.svg"
+import mute from "../images/mute.svg"
 
 
 const Sidebar = () => {
@@ -42,15 +44,15 @@ const Sidebar = () => {
     return (
         <div className="fixed max-h-[calc(100vh - 4rem)] overflow-y-auto removeScroll items-center top-0  bottom-0 left-0 h-full  w-44 m-0 flex flex-col bg-primaryColor text-white shadow-lg">
             <button className="h-28 w-28 mt-4 hover:w-32 ease-in-out duration-150">
-                <img src="./logo.svg" alt="" /> 
+                <img src={IconLogo} alt="" /> 
             </button>
             <ul className="flex-col flex my-2 mx-auto text-primaryHighlight list-disc"  >
                 {/* SERVER ONE */}
                   <span className="serverStatus"></span>
                 <li className="gameRoom my-5 rounded-full list-disc group"onLoad={onFile}>
-                    <img alt="" src="exit.svg" className=" hidden w-auto h-6 absolute left-[103px;] top-3 group-hover:block"  />
+                    <img alt="" src={exit} className="exitSvg hidden w-auto h-6 absolute left-[103px;] top-3 group-hover:block"  />
                   <button  className="serverName"  id="serverOne" ref={servername}>Street Fighter III 3rd Strike:Fight For Japan </button>
-                    <img alt=""  src="./mute.svg" className=" hidden w-auto h-6 absolute left-[103px] top-16 group-hover:block" />
+                    <img alt=""  src={mute} className=" hidden w-auto h-6 absolute left-[103px] top-16 group-hover:block" />
                     
                 </li>
           
