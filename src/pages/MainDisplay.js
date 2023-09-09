@@ -1,20 +1,31 @@
 import { AiFillTwitterCircle } from 'react-icons/ai'
 import { MdFacebook } from 'react-icons/md'
+import Textlogo from "../images/fightcade.svg"
+
+
+
 
 
 
 const MainDisplay = () => (
     
-  
+
 
      <div className="mainLayoutContainer flex flex-col font-secondary h-full"> 
   {/* container */}
      <div className="mainLayout flex flex-col place-items-center ">
           {/* TOP */}
+          
+          
+           
             <div className="mt-16 flex mb-16"> 
-             <img src="./fightcade.svg" alt=""  className="w-auto"/>
+
+              <img src={Textlogo} alt=""  className="w-full mainLogo"/>
+          
                 
             </div>
+           
+            
 
             
             <div className="flex flex-col md:flex-row lg:flex-row text-green-200 ">
@@ -49,7 +60,9 @@ const MainDisplay = () => (
 
             {/* middle X */}
 
-                    <img width=" 60px" height="45px" className="mx-6" src="X.png" alt="X"/>
+                  
+                   <img width=" 60px" height="45px" className="mx-6" src={require ("../images/X.png")} alt="X"/>
+
                   
                     
 
