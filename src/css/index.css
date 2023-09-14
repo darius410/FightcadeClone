@@ -81,23 +81,58 @@
     .serverStatus{
         @apply rounded-full bg-white w-2 h-2 relative right-6 top-[75px] z-10
     }
-    .gameRoom{
-        display:flex;
-        width:100px;
-        height:100px;
+
+.icon-button{
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 20px 20px 20px 20px;
+    
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.icons{
+        position: absolute;
+    top: -30%;
+    right: -70px; /* Adjust this value for icon positioning */
+  
+    z-index:1;
+    border-left: none;
+    display: none;
+}
+.icons:hover{color:white}
+
+.mainHover{
+    padding: 0px 0px 0px 0px;
+    display: inline-block;
+    cursor: pointer;
+}
+    .gameRoomContainer{
+position: relative;
+width:100px;
+    display: inline-block;
+      height:100px;
         text-align:center;
         justify-content:center;
         align-self:center;
         border:4px solid hsl(321,28%,41%);
-        position:relative;
-        font-size:1rem;
-                   
     }
-    .gameRoom:hover{
+ 
+    .gameRoomContainer:hover .icons {
+    display: block;
+}
+
+    .gameRoomContainer:hover{
         color:#fff;
         transition:0.5s;
-    }
-    .gameRoom::before{
+    } 
+    .gameRoomContainer:hover #exitImage,
+    .gameRoomContainer:hover #muteImage {
+        display: block;
+}
+
+    .gameRoomContainer::before{
         content:'';
         position:absolute;
         top:0;
@@ -110,18 +145,26 @@
         transform:scale(0.5);
         z-index:-1;
     }
-     .gameRoom:hover::before{
+     .gameRoomContainer:hover::before{
         transform:scale(1);
         box-shadow:0 0 20px var(--primary-HighlightDim);
         filter:blue(3px);
-  }  
+    }
+    .gameRoomContainer .content:hover .exitSvg,
+.gameRoomContainer .content:hover img {
+    display: block;
+    
+}
+
+
+
    
     .serverName{
         font-family:var(--primaryFont);
         font-weight:bold;
         font-size:0.8rem;
         line-height:1.1;
-        margin:0px 10px;
+        margin:0px 10px 0px 4px ;
     
     }
     .exitSvg{

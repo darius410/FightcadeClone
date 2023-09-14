@@ -47,31 +47,51 @@ const Sidebar = () => {
                 <img src={IconLogo} alt="" /> 
             </button>
             <ul className="flex-col flex my-2 mx-auto text-primaryHighlight list-disc"  >
+
+           
+
                 {/* SERVER ONE */}
                   <span className="serverStatus"></span>
-                <li className="gameRoom my-5 rounded-full list-disc group"onLoad={onFile}>
-                    <img alt="" src={exit} className="exitSvg hidden w-auto h-6 absolute left-[103px;] top-3 group-hover:block"  />
-                  <button  className="serverName"  id="serverOne" ref={servername}>Street Fighter III 3rd Strike:Fight For Japan </button>
-                    <img alt=""  src={mute} className=" hidden w-auto h-6 absolute left-[103px] top-16 group-hover:block" />
-                    
+                <li className="gameRoomContainer my-5 rounded-full list-disc group"onLoad={onFile}>
+                   
+                  
+                  <button  className="serverName mainHover"  id="serverOne" ref={servername}>Street Fighter III 3rd Strike:Fight For Japan </button>
+                     <div className="icons">  
+                        <img alt=""  src={mute} className=" top-16 group-hover:block icon-button" />
+                        <img alt="" src={exit} className=" left-[103px;] top-3 group-hover:block icon-button"  />
+                    </div>
+                 
                 </li>
+
+                
           
 
                 {/* SERVER TWO */}
+             
                 <span className="serverStatus"></span>
-                <li className="gameRoom my-5 rounded-full list-disc group" onLoad={onFile}>
-                    <img alt="" src="exit.svg" className=" hidden w-auto h-6 absolute left-[103px;] top-3 group-hover:block"  />
-                    <button className="serverName" id="serverTwo" ref={secondServer} > The Last Blade 2 / bakumatsu Roman - Dai Ni Maku Gekku No Kenshi  </button>
-                    <img alt=""  src="./mute.svg" className=" hidden w-auto h-6 absolute left-[103px] top-16 group-hover:block" />
-                    
+                <li className="gameRoomContainer my-5 rounded-full list-disc group"onLoad={onFile}>
+                   
+                  
+                  <button  className="serverName mainHover"  id="serverOne" ref={secondServer}>The Last Blade 2 / bakumatsu Roman - Dai Ni Maku Gekku No Kenshi  </button>
+                     <div className="icons">  
+                        <img alt=""  src={mute} className=" top-16 group-hover:block icon-button" />
+                        <img alt="" src={exit} className=" left-[103px;] top-3 group-hover:block icon-button"  />
+                    </div>
+                 
                 </li>
+                
                 {/* SERVER THREE */}
-                <span className="serverStatus"></span>
-                <li className="gameRoom my-5 rounded-full list-disc group" onLoad={onFile}>
-                    <img alt="" src="exit.svg" className=" hidden w-auto h-6 absolute left-[103px;] top-3 group-hover:block"  />
-                  <button className="serverName" id="serverThree" ref={thirdServer} >Rage Of Dragons (NGM -264?) </button>
+               <span className="serverStatus"></span>
+                <li className="gameRoomContainer my-5 rounded-full list-disc group"onLoad={onFile}>
+                   
+                  
                     <img alt=""  src="./mute.svg" className=" hidden w-auto h-6 absolute left-[103px] top-16 group-hover:block" />
-                    
+                  <button  className="serverName mainHover"  id="serverOne" ref={thirdServer}>Rage Of Dragons (NGM -264?) </button>
+                     <div className="icons">  
+                        <img alt=""  src={mute} className=" top-16 group-hover:block icon-button" />
+                        <img alt="" src={exit} className=" left-[103px;] top-3 group-hover:block icon-button"  />
+                    </div>
+                 
                 </li>
                 
                
