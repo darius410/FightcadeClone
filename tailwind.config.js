@@ -20,7 +20,8 @@ module.exports = {
       fontFamily:{
         'primary':'Fjalla One, sans-serif;',
         'secondary': 'Teko, sans-serif;',
-        'patreon': 'Kanit , sans-serif;'
+        'patreon': 'Kanit , sans-serif;',
+        'paragraph':'Barlow Condensed, sans-serif;'
       },
       backgroundImage: {
         'discord': "url('/public/discord-svg.svg')",

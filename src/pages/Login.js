@@ -116,7 +116,8 @@ const Login = ({setIsAuth}) => {
                     </p>
                 </section>
             ) : (
-                <section>
+                
+                <section className="mx-auto mt-10">
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                     <h1>Login</h1>
                     <form onSubmit={handleSubmit}>
