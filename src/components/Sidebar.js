@@ -1,6 +1,6 @@
 import { GiMagnifyingGlass, GiRingingBell } from "react-icons/gi";
 import { VscGear } from "react-icons/vsc";
-import PlayerIcon from './PlayerIcon'
+import PlayerIcon from '../PlayerIcon'
 // import { useState } from "react";
 import { useRef } from "react";
 

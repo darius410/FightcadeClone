@@ -1,16 +1,33 @@
 import { AiFillTwitterCircle } from 'react-icons/ai'
 import { MdFacebook } from 'react-icons/md'
 import Textlogo from "../images/fightcade.svg"
+//NAVIGATION
+import { useNavigate } from "react-router-dom"; 
+
+
+
+
+   
 
 
 
 
 
+ 
+             
 
-const MainDisplay = () => (
-    
+            
+const MainDisplay = () => {
+    const navigate = useNavigate();
+ 
+     
 
 
+return(
+          
+
+            
+            
      <div className="mainLayoutContainer flex flex-col font-secondary h-full"> 
   {/* container */}
      <div className="mainLayout flex flex-col place-items-center ">
@@ -20,7 +37,7 @@ const MainDisplay = () => (
            
             <div className="mt-16 flex mb-16"> 
 
-              <img src={Textlogo} alt=""  className="w-full mainLogo"/>
+              <img src={Textlogo} alt=""  className="w-full mainLogo" />
           
                 
             </div>
@@ -74,7 +91,7 @@ const MainDisplay = () => (
                 
             <h2 className="text-white text-5xl my-14 tracking-wider ">HELP US MAKE A BETTER FIGHTCADE</h2>
 
-            <button className=" learnMore rounded-md  w-33 text-xl px-4 p-4 mb-20 font-patreon font-semibold">Learn More</button>
+            <button className=" learnMore rounded-md  w-33 text-xl px-4 p-4 mb-20 font-patreon font-semibold" onClick={()=>navigate("/learnmore")}>Learn More</button>
 
         
 
@@ -99,8 +116,8 @@ const MainDisplay = () => (
 </div>
   
 
-   
 )
+}
    
 
 

@@ -5,6 +5,8 @@ import Sidebar from "./Sidebar";
 
 
 
+
+
 const Dashboard = () => {
   
   return (
@@ -12,9 +14,14 @@ const Dashboard = () => {
     <Sidebar/>
     <MainDisplay/>
     
+    
+    
   </div>
   )
   }
+
+
+
 
 
 export default Dashboard
