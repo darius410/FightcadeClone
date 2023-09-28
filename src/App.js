@@ -3,6 +3,7 @@ import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import LearnMore from './pages/LearnMore';
+import Collections from './pages/Collections';
 // import { useState } from 'react';
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
       <Route path="/Register" element={<Register/>} /> 
       <Route path="/Dashboard" element={<Dashboard />} /> 
       <Route path="/LearnMore" element={<LearnMore />} /> 
+      <Route path="/Collections" element={<Collections />} /> 
+
     
     </Routes>
   

@@ -4,7 +4,7 @@ import PlayerIcon from '../PlayerIcon'
 // import { useState } from "react";
 import { useRef } from "react";
 import { signOut } from "firebase/auth";
-import { authorize } from "../firebaseconfig";
+import { authorize } from "../config/firebaseconfig";
 import { useNavigate } from "react-router";
 import IconLogo from "../images/logo.svg"
 import exit from "../images/exit.svg"
@@ -95,7 +95,7 @@ const Sidebar = () => {
                 </li>
                 
                
-                <SidebarIcon icon={<GiMagnifyingGlass size='lg' />} />
+                <SidebarIcon icon={<GiMagnifyingGlass size='lg' />} onClick={()=>navigate("/collections")}/>
             </ul>
         
 

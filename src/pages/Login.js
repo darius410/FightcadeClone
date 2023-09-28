@@ -3,7 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from '../axios/axios';
-import {authorize, provider} from "../firebaseconfig";
+import {authorize, provider} from "../config/firebaseconfig";
 import {signInWithPopup} from "firebase/auth";
 import '../css/RegisterLog.css';
 import {Link} from 'react-router-dom';
