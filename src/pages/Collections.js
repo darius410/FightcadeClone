@@ -1,11 +1,33 @@
 
-
+import { useState,useEffect } from "react"
+import {db} from '../config/firebaseconfig'
 import Sidebar from './Sidebar'
-
+import {getDocs ,collection}from "firebase/firestore"
 
 
 const MainDisplay = () => {
 
+    const [gamesList, setGamesList] = useState([]);
+
+    const gamesCollection = collection(db, "Games");
+   useEffect(() => {
+    const getListOfGames = async() => {
+        try{
+             const data = await getDocs(gamesCollection);
+             const filteredGames = data.docs.map((doc) => ({
+                ...doc.data(),
+                id: doc.id,
+        }));
+             setGamesList(filteredGames)
+        }
+       catch (err){
+        console.log(err);
+       };
+       
+    };
+    getListOfGames();
+   },[]); 
+    
     
 return (
     <>
@@ -46,52 +68,28 @@ return (
     <div className="mainLayoutBottom  flex flex-col pt-3">
         <div className=" w-full flex flex-col text-left px-40"> 
        
-                    <h2 className="border-b-2 font-bold border-primaryHighlight py-2 ">WHY PATREON ?</h2>
-                    
-
-        <p className=""><span className="font-primary font-bold">Developing Fightcade is not out daily work.</span>We're doing it in our spare time out of our passion for retro games.It never gave us any money, but it actually costs quite a bit to keep the servers up and running.</p>
-
-<p className="pt-2"></p>Opening a Patreon means we can cover those expenses, and reaching a certain point in funding we can also continue allocating time to develop some new features.Fightcade will continue to be free for everyone, forever. We're just introducing extra frontend and cosmetic features for our patrons.
-
-<p className="pt-3 pb-8"><span className="font-bold">Fightcade will continue to be free for everyone, forever.</span> We're just introducing extra frontend and cosmetic features for our patrons.</p>
-
-<h2 className="border-b-2 font-bold border-primaryHighlight py-2 "> WHAT DO I GET AS A PATRON ?</h2>
-
-<ul className=" blueBullets pl-4 pb-2">
-    <li>Customize your UI: unlock all custom color themes.</li>
-    <li>Join up to 12 concurrent channels.</li>
-    <li>See your ELO score in ranked game channels after every match.</li>
-    <li>Create your own Private Lobbies.</li>
-    <li>Disable live spectators to your matches.</li>
-    <li>Goldie name in the Fightcade chat.</li>
-    <li>Get an exclusive role in our official Discord server to show off your support.</li>
-
-</ul>
-
-<p className="">The features available to you depend on the tier you opted in. More info on our Patreon page.</p>
+            {gamesList.map((game) => (
+                 <>
+                 <p>{game.playerCount}</p>
+                <h3>{game.title}</h3>
+                <img src={game.imageUrl}></img>
+                 </>
+            ))}
+      
         </div>
-       
-    </div>
 
 
-           
-            
-
-            
         
-        
-
     </div>
 
   
 
-
+</div>
   
 </>
 )
 }
    
-
 
 
 

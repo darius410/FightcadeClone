@@ -1,7 +1,9 @@
-
+import {getStorage} from "firebase/storage"
 import {getFirestore} from 'firebase/firestore'// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import {getAuth, GoogleAuthProvider} from 'firebase/auth';
+// import {getDatabase, ref, set ,onValue} from "firebase/database"
+
 // import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -24,3 +26,31 @@ const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const authorize = getAuth(app);
 export const provider = new GoogleAuthProvider();
+
+
+
+// function writeUserData(userId,name,email,imageUrl){
+//   const userDatabase =  getDatabase();
+//   const reference = ref(userDatabase, 'user/' + userId);
+
+//   set(reference,{
+//     username:name,
+//     email:email,
+//     profile_picture:imageUrl
+// });
+  
+// }
+
+
+// writeUserData("cosmic_spider","Darius Hansley", "noobkilla44@yahoo.com","imgUrl")
+
+
+// function getUserData(){
+//   const userDatabase =  getDatabase();  
+//   const dataRef = ref(userDatabase, 'user/' + userId);
+
+//   onValue(dataRef,(snapshot) => {
+//     const data = snapshot.val();
+//     updateDistance(postElement, data);
+//   });
+// }
