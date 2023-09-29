@@ -1,3 +1,4 @@
+ // TODO Find a way to ref images in storage by using a url in the table at firestore
 
 import { useState,useEffect } from "react"
 import {db} from '../config/firebaseconfig'
