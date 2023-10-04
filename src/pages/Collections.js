@@ -107,16 +107,27 @@ return (
         <div className=" w-full flex flex-col text-left"> 
         <h2 className="font-bold">HIDDEN GEMS</h2>
        <ul className="flex flex-row gap-1 md:items-stretch"> 
+
+       
        {gemsList.map((gem) => (
-         <li className="text-center rounded-lg h-[150px] flex-1 min-w-[200px]" style={{ 
+         <li className=" gameItem text-center rounded-lg h-[150px] min-w-[200px]" style={{ 
            // backgroundImage:`url(${game.imageUrl}`,
            backgroundColor:`red`,
            
                     }}> 
-                   
+                      <div className=" hoverOverGameItem">
+                            <button>Fav</button>
+                            <button>Join</button>
+                          </div>
                     <h3 className="">{gem.title}</h3>
+
+                      
+                       
+                       
              </li>
               ))}
+
+              
         </ul>
         </div>
         

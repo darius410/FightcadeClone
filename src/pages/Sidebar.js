@@ -46,9 +46,8 @@ const Sidebar = () => {
             <button className="h-28 w-28 mt-4 hover:w-32 ease-in-out duration-150">
                 <img src={IconLogo} alt="" onClick={()=>navigate("/dashboard")}/> 
             </button>
+             
             <ul className="flex-col flex my-2 mx-auto text-primaryHighlight list-disc"  >
-
-           
 
                 {/* SERVER ONE */}
                   <span className="serverStatus"></span>
