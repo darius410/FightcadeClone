@@ -253,7 +253,37 @@ width:100px;
     .mainLogo{
     width:50px;
     height:80px;
+    }
+
+    /***Games List Container***/
+.gameItem{
+    display:flex;
+    flex:1;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    position: relative;
 }
+
+    .hoverOverGameItem{
+    
+    display:none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: #f4f4;
+    border: 1px solid #ccc;
+    
+    }
+    .gameItem:hover .hoverOverGameItem{
+        display:flex;
+
+    }
+
+
     
   
 }

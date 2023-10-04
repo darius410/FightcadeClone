@@ -5,7 +5,7 @@ import PlayerIcon from '../PlayerIcon'
 import { useRef } from "react";
 import { signOut } from "firebase/auth";
 import { authorize } from "../config/firebaseconfig";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import IconLogo from "../images/logo.svg"
 import exit from "../images/exit.svg"
 import mute from "../images/mute.svg"
@@ -46,9 +46,8 @@ const Sidebar = () => {
             <button className="h-28 w-28 mt-4 hover:w-32 ease-in-out duration-150">
                 <img src={IconLogo} alt="" onClick={()=>navigate("/dashboard")}/> 
             </button>
+             
             <ul className="flex-col flex my-2 mx-auto text-primaryHighlight list-disc"  >
-
-           
 
                 {/* SERVER ONE */}
                   <span className="serverStatus"></span>
@@ -95,7 +94,7 @@ const Sidebar = () => {
                 </li>
                 
                
-                <SidebarIcon icon={<GiMagnifyingGlass size='lg' />} onClick={()=>navigate("/collections")}/>
+                <SidebarIcon icon={<GiMagnifyingGlass size='lg' />} alt="Search Icon" onClick={()=>navigate("/collections")}/>
             </ul>
         
 
@@ -118,10 +117,10 @@ const Sidebar = () => {
 
 
 
-const SidebarIcon = ({icon}) => (
-    <button className="sideBarIcon">
+const SidebarIcon = ({icon,onClick}) => (
+    <button className="sideBarIcon" onClick={onClick}  >
         {icon}
-        
+       
     </button>
 
     

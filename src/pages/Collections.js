@@ -29,7 +29,27 @@ const MainDisplay = () => {
     getListOfGames();
    },[]); 
     
-    
+   const [gemsList, setGemsList] = useState([]);
+
+   const gemsCollection = collection(db, "Hidden Gems");
+  useEffect(() => {
+   const getListOfGems = async() => {
+       try{
+            const data = await getDocs(gemsCollection);
+            const filteredGems = data.docs.map((doc) => ({
+               ...doc.data(),
+               id: doc.id,
+       }));
+            setGemsList(filteredGems)
+       }
+      catch (err){
+       console.log(err);
+      };
+      
+   };
+   getListOfGems();
+  },[]); 
+   
 return (
     <>
 <Sidebar/>
@@ -67,19 +87,49 @@ return (
     </div>
 
     <div className="mainLayoutBottom  flex flex-col pt-3">
-        <div className=" w-full flex flex-col text-left px-40"> 
-       
-            {gamesList.map((game) => (
-                 <>
-                 <p>{game.playerCount}</p>
-                <h3>{game.title}</h3>
-                <img src={game.imageUrl}></img>
-                 </>
-            ))}
-      
+        <div className=" w-full flex flex-col text-left mx-5"> 
+        <h2 classname="font-bold">POPULAR GAMES</h2>
+       <ul className="flex flex-row gap-1"> 
+       {gamesList.map((game) => (
+         <li className="text-center rounded-lg w-[200px] h-[150px]" style={{ 
+           // backgroundImage:`url(${game.imageUrl}`,
+           backgroundColor:`red`,
+           
+                    }}> 
+                    <p>{game.playerCount}</p>
+                    <h3 className="">{game.title}</h3>
+             </li>
+              ))}
+        </ul>
         </div>
 
 
+        <div className=" w-full flex flex-col text-left"> 
+        <h2 className="font-bold">HIDDEN GEMS</h2>
+       <ul className="flex flex-row gap-1 md:items-stretch"> 
+
+       
+       {gemsList.map((gem) => (
+         <li className=" gameItem text-center rounded-lg h-[150px] min-w-[200px]" style={{ 
+           // backgroundImage:`url(${game.imageUrl}`,
+           backgroundColor:`red`,
+           
+                    }}> 
+                      <div className=" hoverOverGameItem">
+                            <button>Fav</button>
+                            <button>Join</button>
+                          </div>
+                    <h3 className="">{gem.title}</h3>
+
+                      
+                       
+                       
+             </li>
+              ))}
+
+              
+        </ul>
+        </div>
         
     </div>
 
