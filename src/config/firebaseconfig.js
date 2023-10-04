@@ -27,7 +27,7 @@ export const db = getFirestore(app);
 export const authorize = getAuth(app);
 export const provider = new GoogleAuthProvider();
 
-
+// note to future self consider using this logic to make reads/writes to database
 
 // function writeUserData(userId,name,email,imageUrl){
 //   const userDatabase =  getDatabase();
