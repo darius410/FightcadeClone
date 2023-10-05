@@ -1,5 +1,5 @@
  // TODO Find a way to ref images in storage by using a url in the table at firestore
-
+ import { VscStarEmpty, VscStarFull } from "react-icons/vsc";
 import { useState,useEffect } from "react"
 import {db} from '../config/firebaseconfig'
 import Sidebar from './Sidebar'
@@ -93,6 +93,7 @@ return (
        {gamesList.map((game) => (
          <li className="text-center rounded-lg w-[200px] h-[150px]" style={{ 
            // backgroundImage:`url(${game.imageUrl}`,
+           backgroundSize:`cover`,
            backgroundColor:`red`,
            
                     }}> 
@@ -111,13 +112,15 @@ return (
        
        {gemsList.map((gem) => (
          <li className=" gameItem text-center rounded-lg h-[150px] min-w-[200px]" style={{ 
-           // backgroundImage:`url(${game.imageUrl}`,
-           backgroundColor:`red`,
+           // backgroundImage:`url(${gem.imageUrl}`,
+            backgroundColor:`red`,
            
                     }}> 
                       <div className=" hoverOverGameItem rounded-lg space-y-7">
-                            <button className="learnMore rounded-md font-patreon font-semibold">Fav</button>
-                            <button className="learnMore rounded-md font-patreon font-semibold">Join</button>
+                            <button className="learnMore flex rounded-md font-patreon font-semibold content-center">
+                             <Favorites icon={<VscStarFull size='xs'/>} />
+                              Fav</button>
+                            <button className="learnMore rounded-md px-6 font-patreon font-semibold">Join</button>
                           </div>
                     <h3 className="">{gem.title}</h3>
 
@@ -133,13 +136,21 @@ return (
         
     </div>
 
-  
-
 </div>
   
 </>
 )
 }
+
+const Favorites = ({icon,onClick}) => (
+  <button className="favoritesIcon" onClick={onClick}  >
+      {icon}
+     
+  </button>
+
+  
+)
+
    
 
 
