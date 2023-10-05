@@ -115,9 +115,9 @@ return (
            backgroundColor:`red`,
            
                     }}> 
-                      <div className=" hoverOverGameItem">
-                            <button>Fav</button>
-                            <button>Join</button>
+                      <div className=" hoverOverGameItem rounded-lg space-y-7">
+                            <button className="learnMore rounded-md font-patreon font-semibold">Fav</button>
+                            <button className="learnMore rounded-md font-patreon font-semibold">Join</button>
                           </div>
                     <h3 className="">{gem.title}</h3>
 
