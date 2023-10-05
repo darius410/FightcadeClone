@@ -257,7 +257,7 @@ width:100px;
 
     /***Games List Container***/
 .gameItem{
-    display:flex;
+    
     flex:1;
     justify-content: space-between;
     align-items: center;
@@ -269,15 +269,26 @@ width:100px;
 }
 
     .hoverOverGameItem{
-    
+    height:150px;
     display:none;
     position: absolute;
     right: 0;
-    top: 100%;
-    background: #f4f4;
-    border: 1px solid #ccc;
+    top: 0;
+    right:0;
+    left:0;
+    flex-direction:column;
+    justify-self: space-between;
+    border-radius:10%;
+  background: rgb(0,0,0);
+background: radial-gradient(circle, rgba(0,0,0,0.6352592062215512) 4%, rgba(0,0,0,1) 100%);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
     
     }
+    
+
     .gameItem:hover .hoverOverGameItem{
         display:flex;
 
