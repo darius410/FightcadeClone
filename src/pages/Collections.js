@@ -1,4 +1,5 @@
 import {BsPerson} from "react-icons/bs"
+import {TbCircleLetterR} from 'react-icons/tb'
  import { VscStarEmpty, VscStarFull } from "react-icons/vsc";
 import { useState,useEffect } from "react"
 import {db} from '../config/firebaseconfig'
@@ -98,9 +99,10 @@ return (
            
                     }}> 
                     
-                    <div className="flex justify-center bg-cyan-500 w-12 h-6 rounded-md absolute top-[-5px] ">
-                      <PlayerCountIcon icon={<BsPerson size='xs'/>} />
-                      <p className="top-text relative content-center">{game.playerCount}</p>
+                    <div className="flex justify-center bg-cyan-500 w-13 h-6 rounded-b-md absolute top-0 ">
+                      <PlayerCountIcon icon={<BsPerson size='s'/>} />
+                      <p className="top-text text-lg relative border-r-2 px-1">{game.playerCount}</p>
+                      <RomIcon icon={<TbCircleLetterR size='s'/>} className="" /> 
                      </div>
                     <h3 className="bottom-text">{game.title}</h3>
                    
@@ -163,12 +165,20 @@ const Favorites = ({icon,onClick}) => (
   
 )
 const PlayerCountIcon = ({icon}) => (
-  <button className="playerCountIcon ">
+  <button className="playerCountIcon">
      {icon}
   </button>
      
     
 )
+const RomIcon = ({icon}) => (
+  <button className="playerCountIcon">
+     {icon}
+  </button>
+     
+    
+)
+
 
 
 
