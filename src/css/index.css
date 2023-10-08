@@ -11,6 +11,7 @@
 --primary-Highlight:hsl(321,28%,41%);
 --primary-HighlightDim:hsl(321,20%,70%);
 --secondary-Highlight:hsl(176,87%,57%);
+--color-White:hsl(180, 0%,100%)
 --primaryFont:Fjalla One, sans-serif;
 --secondaryFont: Teko, sans-serif;
 --patreon: Kanit , sans-serif;
@@ -33,6 +34,9 @@
     }
     .favoritesIcon{
           @apply relative h-6 w-6 text-primaryHighlight
+    }
+    .playerCountIcon{
+         @apply relative h-6 w-6 
     }
     .sideBarIcon {
         @apply relative flex items-center justify-center h-12 w-12 my-4 mx-auto shadow-lg bg-transparent text-primaryHighlight 
@@ -302,10 +306,40 @@ background: radial-gradient(circle, rgba(0,0,0,0.6352592062215512) 4%, rgba(0,0,
     }
     
 
-    .gameItem:hover .hoverOverGameItem{
+    .threeItemsPerRow:hover .hoverOverGameItem{
         display:flex;
 
     }
+    .sixItemsPerRow:hover .hoverOverGameItem{
+        display:flex;
+
+    }
+
+    .bottom-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding-top: 20px;
+    
+}
+.top-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding-bottom: 20px;
+    
+}
+
+
+
+
+
+
+
 
 
     

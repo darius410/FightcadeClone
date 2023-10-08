@@ -1,4 +1,4 @@
- // TODO Find a way to ref images in storage by using a url in the table at firestore
+import {BsPerson} from "react-icons/bs"
  import { VscStarEmpty, VscStarFull } from "react-icons/vsc";
 import { useState,useEffect } from "react"
 import {db} from '../config/firebaseconfig'
@@ -91,14 +91,26 @@ return (
         <h2 classname="font-bold">POPULAR GAMES</h2>
        <ul className=" flex flex-row ml-2 gap-1 md:items-stretch"> 
        {gamesList.map((game) => (
-         <li className="sixItemsPerRow text-center rounded-lg p-2 m-1  w-[200px] h-[150px]" style={{ 
+         <li className="sixItemsPerRow text-center flex justify-center rounded-lg p-2 m-1  w-[200px] h-[150px]" style={{ 
            // backgroundImage:`url(${game.imageUrl}`,
            backgroundSize:`cover`,
            backgroundColor:`red`,
            
                     }}> 
-                    <p>{game.playerCount}</p>
-                    <h3 className="">{game.title}</h3>
+                    
+                    <div className="flex justify-center bg-cyan-500 w-12 h-6 rounded-md absolute top-[-5px] ">
+                      <PlayerCountIcon icon={<BsPerson size='xs'/>} />
+                      <p className="top-text relative content-center">{game.playerCount}</p>
+                     </div>
+                    <h3 className="bottom-text">{game.title}</h3>
+                   
+                    <div className=" hoverOverGameItem rounded-lg space-y-7">
+                      <button className="learnMore flex rounded-md font-patreon font-semibold content-center">
+                        <Favorites icon={<VscStarFull size='xs'/>} />
+                          Fav</button>
+                      <button className="learnMore rounded-md px-6 font-patreon font-semibold">Join</button>
+                    </div>
+                    
              </li>
               ))}
         </ul>
@@ -150,6 +162,15 @@ const Favorites = ({icon,onClick}) => (
 
   
 )
+const PlayerCountIcon = ({icon}) => (
+  <button className="playerCountIcon ">
+     {icon}
+  </button>
+     
+    
+)
+
+
 
    
 
