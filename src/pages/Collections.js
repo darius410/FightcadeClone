@@ -87,11 +87,11 @@ return (
     </div>
 
     <div className="mainLayoutBottom  flex flex-col pt-3">
-        <div className=" w-full flex flex-col text-left mx-5"> 
+        <div className=" w-full flex flex-col text-left"> 
         <h2 classname="font-bold">POPULAR GAMES</h2>
-       <ul className="flex flex-row gap-1"> 
+       <ul className=" flex flex-row ml-2 gap-1 md:items-stretch"> 
        {gamesList.map((game) => (
-         <li className="text-center rounded-lg w-[200px] h-[150px]" style={{ 
+         <li className="sixItemsPerRow text-center rounded-lg p-2 m-1  w-[200px] h-[150px]" style={{ 
            // backgroundImage:`url(${game.imageUrl}`,
            backgroundSize:`cover`,
            backgroundColor:`red`,
@@ -107,11 +107,11 @@ return (
 
         <div className=" w-full flex flex-col text-left"> 
         <h2 className="font-bold">HIDDEN GEMS</h2>
-       <ul className="flex flex-row gap-1 md:items-stretch"> 
+       <ul className="flex flex-row gap-1 ml-2 md:items-stretch"> 
 
        
        {gemsList.map((gem) => (
-         <li className=" gameItem text-center rounded-lg h-[150px] min-w-[200px]" style={{ 
+         <li className=" threeItemsPerRow text-center p-2 m-1 rounded-lg h-[150px] min-w-[200px]" style={{ 
            // backgroundImage:`url(${gem.imageUrl}`,
             backgroundColor:`red`,
            

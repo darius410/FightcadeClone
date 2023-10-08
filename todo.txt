@@ -9,6 +9,6 @@ SIDEBAR
 
 MAIN LAYOUT
 --fix the hover effect for bottom icons to glow blue discord twitter facebook
---Make the game items fit on screen sizes while maintaing a certain number of columns in each row
+
 --make the game items capable of being added to the sidebar 
 ------make that same selection appear only for the user that is signed in currently 
