@@ -211,7 +211,7 @@ width:100px;
 
 .mainLayoutContainer{
      
-     background-position:0px 0px 0px 0px;
+     
      
      background-size:cover;
      position:relative;
@@ -222,7 +222,7 @@ width:100px;
         text-center
         
         h-screen 
-        w-full
+       
        
         ml-44
         
@@ -259,17 +259,27 @@ width:100px;
     }
 
     /***Games List Container***/
-.gameItem{
+.threeItemsPerRow{
     
     flex:1;
     justify-content: space-between;
     align-items: center;
     
-    padding: 10px;
-    margin: 5px;
+
     cursor: pointer;
     position: relative;
 }
+.sixItemsPerRow{
+    
+    flex:1;
+    justify-content: space-between;
+    align-items: center;
+    
+     
+    cursor: pointer;
+    position: relative;
+}
+
 
     .hoverOverGameItem{
     height:150px;
