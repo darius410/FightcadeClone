@@ -36,7 +36,7 @@
           @apply relative h-6 w-6 text-primaryHighlight
     }
     .playerCountIcon{
-         @apply relative h-6 w-6 
+         @apply relative  
     }
     .sideBarIcon {
         @apply relative flex items-center justify-center h-12 w-12 my-4 mx-auto shadow-lg bg-transparent text-primaryHighlight 
@@ -175,7 +175,7 @@ width:100px;
 
    
     .serverName{
-        font-family:var(--primaryFont);
+        font-family:var(--secondaryFont);
         font-weight:bold;
         font-size:0.8rem;
         line-height:1.1;
