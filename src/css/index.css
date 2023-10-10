@@ -25,6 +25,9 @@
 
 
 @layer components {
+    .primaryBackground{
+        background-color:var(--secondary-Color)
+    }
     .removeScroll::-webkit-scrollbar{
         display:none;
     }
