@@ -93,13 +93,13 @@ return (
        <ul className=" flex flex-row ml-2 gap-1 md:items-stretch"> 
        {gamesList.map((game) => (
          <li className="sixItemsPerRow text-center flex justify-center rounded-lg p-2 m-1  w-[200px] h-[150px]" style={{ 
-           // backgroundImage:`url(${game.imageUrl}`,
+           backgroundImage:`url(${game.imageUrl}`,
            backgroundSize:`cover`,
            backgroundColor:`red`,
            
                     }}> 
                     
-                    <div className="flex justify-center bg-cyan-500 w-13 h-6 rounded-b-md absolute top-0 ">
+                    <div className="flex justify-center primaryBackground w-13 h-6 rounded-b-md absolute top-0 ">
                       <PlayerCountIcon icon={<BsPerson size='s'/>} />
                       <p className="top-text text-lg relative border-r-2 px-1">{game.playerCount}</p>
                       <RomIcon icon={<TbCircleLetterR size='s'/>} className="" /> 
@@ -107,7 +107,7 @@ return (
                     <h3 className="bottom-text">{game.title}</h3>
                    
                     <div className=" hoverOverGameItem rounded-lg space-y-7">
-                      <button className="learnMore flex rounded-md font-patreon font-semibold content-center">
+                      <button className="learnMore flex rounded-md font-patreon font-semibold content-center px-2">
                         <Favorites icon={<VscStarFull size='xs'/>} />
                           Fav</button>
                       <button className="learnMore rounded-md px-6 font-patreon font-semibold">Join</button>
@@ -126,12 +126,12 @@ return (
        
        {gemsList.map((gem) => (
          <li className=" threeItemsPerRow text-center p-2 m-1 rounded-lg h-[150px] min-w-[200px]" style={{ 
-           // backgroundImage:`url(${gem.imageUrl}`,
+           backgroundImage:`url(${gem.imageUrl}`,
             backgroundColor:`red`,
            
                     }}> 
                       <div className=" hoverOverGameItem rounded-lg space-y-7">
-                            <button className="learnMore flex rounded-md font-patreon font-semibold content-center">
+                            <button className="learnMore flex rounded-md font-patreon font-semibold content-center px-2">
                              <Favorites icon={<VscStarFull size='xs'/>} />
                               Fav</button>
                             <button className="learnMore rounded-md px-6 font-patreon font-semibold">Join</button>
