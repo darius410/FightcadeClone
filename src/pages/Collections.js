@@ -2,14 +2,30 @@ import {BsPerson} from "react-icons/bs"
 import {TbCircleLetterR} from 'react-icons/tb'
  import { VscStarEmpty, VscStarFull } from "react-icons/vsc";
 import { useState,useEffect } from "react"
-import {db} from '../config/firebaseconfig'
+import {db} from '../config/firebaseconfig';
+import { app } from '../config/firebaseconfig'
+// import {authorize} from "../config/firebaseconfig"
 import Sidebar from './Sidebar'
-import {getDocs ,collection}from "firebase/firestore"
+import {getDocs ,addDoc,collection,getFirestore}from "firebase/firestore"
+
+
+   
+function addGame(){
+  
+  const docRef = addDoc(collection(db, "Users","cosmic-borg "), {
+    name: "Tokyo",
+    country: "Japan"
+  });
+  console.log("Document written with ID: ", docRef.id);   
+  
+  }
 
 
 const MainDisplay = () => {
 
+
     const [gamesList, setGamesList] = useState([]);
+
 
     const gamesCollection = collection(db, "Games");
    useEffect(() => {
@@ -50,6 +66,8 @@ const MainDisplay = () => {
    };
    getListOfGems();
   },[]); 
+
+
    
 return (
     <>
@@ -110,7 +128,8 @@ return (
                       <button className="learnMore flex rounded-md font-patreon font-semibold content-center px-2">
                         <Favorites icon={<VscStarFull size='xs'/>} />
                           Fav</button>
-                      <button className="learnMore rounded-md px-6 font-patreon font-semibold">Join</button>
+                      <button className="learnMore rounded-md px-6 font-patreon font-semibold" 
+                      onClick={addGame}>Join</button>
                     </div>
                     
              </li>
