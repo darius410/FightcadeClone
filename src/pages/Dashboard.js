@@ -3,12 +3,15 @@ import MainDisplay from "./MainDisplay";
 import Sidebar from "./Sidebar"; 
 
 
+ 
 
 
 
 
 const Dashboard = () => {
-  
+
+
+
   return (
   <div className="flex flex-row">
     <Sidebar/>
@@ -19,6 +22,7 @@ const Dashboard = () => {
   </div>
   )
   }
+
 
 
 

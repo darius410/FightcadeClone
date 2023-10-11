@@ -1,15 +1,18 @@
-import { GiMagnifyingGlass, GiRingingBell } from "react-icons/gi";
-import { VscGear } from "react-icons/vsc";
+
+// ?MISC MISC MISC MISC MISC MISC
 import PlayerIcon from '../PlayerIcon'
 // import { useState } from "react";
+// ?LOGIC LOGIC LOGIC LOGIC LOGIC
 import { useRef } from "react";
 import { signOut } from "firebase/auth";
 import { authorize } from "../config/firebaseconfig";
 import { useNavigate } from "react-router-dom";
+// ?ICONS ICONS ICONS ICONS ICONS ICONS 
 import IconLogo from "../images/logo.svg"
 import exit from "../images/exit.svg"
 import mute from "../images/mute.svg"
-
+import { GiMagnifyingGlass, GiRingingBell } from "react-icons/gi";
+import { VscGear } from "react-icons/vsc";
 
 const Sidebar = () => {
    
@@ -48,6 +51,7 @@ const Sidebar = () => {
             </button>
              
             <ul className="flex-col flex my-2 mx-auto text-primaryHighlight list-disc"  >
+                
 
                 {/* SERVER ONE */}
                   <span className="serverStatus"></span>
