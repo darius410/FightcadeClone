@@ -3,7 +3,6 @@ import {getFirestore} from 'firebase/firestore'// Import the functions you need 
 import { initializeApp } from "firebase/app";
 import {getAuth, GoogleAuthProvider} from 'firebase/auth';
 // import {getDatabase, ref, set ,onValue} from "firebase/database"
-
 // import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
