@@ -71,8 +71,8 @@ const MainDisplay = () => {
    
 return (
     <>
-<Sidebar/>
-<div className="mainLayoutContainer text-white flex flex-col font-secondary h-full"> 
+
+<div className="mainLayoutContainer text-white flex flex-col font-secondary h-full w-full"> 
   {/* container */}
      <div className="mainLayout flex flex-col place-items-center ">
           {/* TOP */}

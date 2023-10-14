@@ -28,7 +28,7 @@ return(
 
             
             
-     <div className="mainLayoutContainer flex flex-col font-secondary h-full"> 
+<div className="mainLayoutContainer flex flex-col font-secondary h-full w-full"> 
   {/* container */}
      <div className="mainLayout flex flex-col place-items-center ">
           {/* TOP */}
@@ -91,7 +91,7 @@ return(
                 
             <h2 className="text-white text-5xl my-14 tracking-wider ">HELP US MAKE A BETTER FIGHTCADE</h2>
 
-            <button className=" learnMore rounded-md  w-33 text-xl px-4 p-4 mb-20 font-patreon font-semibold" onClick={()=>navigate("/learnmore")}>Learn More</button>
+            <button className=" learnMore rounded-md  w-33 text-xl px-4 p-4 mb-20 font-patreon font-semibold" onClick={()=>navigate("learnmore")}>Learn More</button>
 
         
 
