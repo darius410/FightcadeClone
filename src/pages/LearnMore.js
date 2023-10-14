@@ -10,7 +10,7 @@ const MainDisplay = () => {
 return (
     <>
 <Sidebar/>
-<div className="mainLayoutContainer flex flex-col font-secondary h-full"> 
+<div className="mainLayoutContainer text-white flex flex-col font-secondary h-full"> 
   {/* container */}
      <div className="mainLayout flex flex-col place-items-center ">
           {/* TOP */}

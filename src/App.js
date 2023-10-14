@@ -24,7 +24,7 @@ const RequireAuth = ({child}) => {
     <Routes> 
       <Route path="/" >
         
-        <Route index element={<Dashboard/>} /> 
+        <Route element={<Dashboard/>} /> 
         <Route path="/Login" element={<Login /> } />
         
         <Route path="/Register" element={<Register/>} /> 
