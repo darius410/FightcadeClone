@@ -72,7 +72,7 @@ const MainDisplay = () => {
 return (
     <>
 <Sidebar/>
-<div className="mainLayoutContainer flex flex-col font-secondary h-full"> 
+<div className="mainLayoutContainer text-white flex flex-col font-secondary h-full"> 
   {/* container */}
      <div className="mainLayout flex flex-col place-items-center ">
           {/* TOP */}
@@ -107,7 +107,7 @@ return (
 
     <div className="mainLayoutBottom  flex flex-col pt-3">
         <div className=" w-full flex flex-col text-left"> 
-        <h2 classname="font-bold">POPULAR GAMES</h2>
+        <h2 className="font-bold">POPULAR GAMES</h2>
        <ul className=" flex flex-row ml-2 gap-1 md:items-stretch"> 
        {gamesList.map((game) => (
          <li className="sixItemsPerRow text-center flex justify-center rounded-lg p-2 m-1  w-[200px] h-[150px]" style={{ 
