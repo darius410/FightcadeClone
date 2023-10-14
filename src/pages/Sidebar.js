@@ -60,8 +60,8 @@ const Sidebar = () => {
                   
                   <button  className="serverName mainHover"  id="serverOne" ref={servername}>Street Fighter III 3rd Strike:Fight For Japan </button>
                      <div className="icons">  
-                        <img alt=""  src={mute} className=" top-16 group-hover:block icon-button" />
-                        <img alt="" src={exit} className=" left-[103px;] top-3 group-hover:block icon-button"  />
+                        <img alt=""  src={mute} className="group-hover:block icon-button" />
+                        <img alt="" src={exit} className="mt-3  group-hover:block icon-button"  />
                     </div>
                  
                 </li>
@@ -78,7 +78,7 @@ const Sidebar = () => {
                   <button  className="serverName mainHover"  id="serverOne" ref={secondServer}>The Last Blade 2 / bakumatsu Roman - Dai Ni Maku Gekku No Kenshi  </button>
                      <div className="icons">  
                         <img alt=""  src={mute} className=" top-16 group-hover:block icon-button" />
-                        <img alt="" src={exit} className=" left-[103px;] top-3 group-hover:block icon-button"  />
+                        <img alt="" src={exit} className=" mt-3 group-hover:block icon-button"  />
                     </div>
                  
                 </li>
@@ -92,7 +92,7 @@ const Sidebar = () => {
                   <button  className="serverName mainHover"  id="serverOne" ref={thirdServer}>Rage Of Dragons (NGM -264?) </button>
                      <div className="icons">  
                         <img alt=""  src={mute} className=" top-16 group-hover:block icon-button" />
-                        <img alt="" src={exit} className=" left-[103px;] top-3 group-hover:block icon-button"  />
+                        <img alt="" src={exit} className=" mt-3 group-hover:block icon-button"  />
                     </div>
                  
                 </li>
