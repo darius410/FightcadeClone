@@ -26,6 +26,7 @@ signInWithEmailAndPassword(authorize, email, password)
   .then((userCredential) => {
     // Signed In 
     const user = userCredential.user;
+    console.log(user)
     navigate("/dashboard");
     // ...
   })
@@ -69,8 +70,6 @@ signInWithEmailAndPassword(authorize, email, password)
                        
                         <button onClick={ loginToFireBase }>Sign In With Google</button>  
 
-              
-                 
                 </section>
         </>      
             )
