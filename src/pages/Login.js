@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from '../axios/axios';
 import {authorize, provider} from "../config/firebaseconfig";
 import {signInWithPopup} from "firebase/auth";
-import '../css/RegisterLog.css';
+
 import {Link} from 'react-router-dom';
 import { useNavigate } from "react-router-dom"; //Handles the redirect to the dashboard after user signs in
 
@@ -27,7 +27,7 @@ signInWithEmailAndPassword(authorize, email, password)
     // Signed In 
     const user = userCredential.user;
     console.log(user)
-    navigate("/dashboard");
+    navigate("/dashboard/maindisplay");
     // ...
   })
   .catch((error) => {
