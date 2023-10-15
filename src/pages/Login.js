@@ -27,7 +27,7 @@ signInWithEmailAndPassword(authorize, email, password)
     // Signed In 
     const user = userCredential.user;
     console.log(user)
-    navigate("/dashboard");
+    navigate("/dashboard/maindisplay");
     // ...
   })
   .catch((error) => {

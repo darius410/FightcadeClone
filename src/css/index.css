@@ -197,6 +197,14 @@ width:100px;
         0 0 15px 2px rgb(255 255 255 )
 
 }
+
+.sideBarMenu{
+    height:100vh;
+    width:100px;
+    background-color:blue;
+    position:absolute;
+    display:block;
+}
 .learnMore{
     background:#fff;
     box-shadow: 0px 0px 10px 0.5px hsl(176,87%,57%);
@@ -317,24 +325,24 @@ background: radial-gradient(circle, rgba(0,0,0,0.6352592062215512) 4%, rgba(0,0,
 
     }
 
-    .bottom-text {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 0;
-    padding-top: 20px;
-    
-}
-.top-text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0;
-    padding-bottom: 20px;
-    
-}
+        .bottom-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0;
+            padding-top: 20px;
+            
+        }
+        .top-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 0;
+            padding-bottom: 20px;
+            
+        }
 
 
 

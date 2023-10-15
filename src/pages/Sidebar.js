@@ -1,7 +1,7 @@
 
 // ?MISC MISC MISC MISC MISC MISC
 import PlayerIcon from '../PlayerIcon'
-// import { useState } from "react";
+import { useState } from "react";
 // ?LOGIC LOGIC LOGIC LOGIC LOGIC
 import { useRef } from "react";
 import { signOut } from "firebase/auth";
@@ -29,7 +29,11 @@ const Sidebar = () => {
 
         }
     
-    
+    const [isVisible, setIsVisible] = useState(false);
+
+    const toggleMenu = () => {
+        setIsVisible(!isVisible)
+    };
 
 
     // const [servername, setServerName] = useState(true);
@@ -45,11 +49,17 @@ const Sidebar = () => {
     };
 
     return (
+
+
+        
         <div className="fixed max-h-[calc(100vh - 4rem)] overflow-y-auto removeScroll items-center top-0  bottom-0 left-0 h-full  w-44 m-0 flex flex-col bg-primaryColor text-white shadow-lg">
+            
             <button className="h-28 w-28 mt-4 hover:w-32 ease-in-out duration-150">
                 <img src={IconLogo} alt="" onClick={()=>navigate("maindisplay")}/> 
             </button>
              
+
+          
             <ul className="flex-col flex my-2 mx-auto text-primaryHighlight list-disc"  >
                 
 
@@ -105,20 +115,29 @@ const Sidebar = () => {
                 
 
             <div className="border-t-2 w-full h-56 mb-[30%] border-primaryHighlight">
-                <SidebarIcon icon={<GiRingingBell size='lg' />} />
+                <SidebarIcon icon={<GiRingingBell size='lg' onClick={toggleMenu}   />} />
+                    
+
                  <SidebarIcon icon={<VscGear size='lg' />} />
                 <PlayerIcon />
             </div>
 
 
+
             <button onClick={signUserOut}>Sign Out</button>
+
+         
 
         </div>
 
+
+        
+
         );
+        
+
+        
 };
-
-
 
 
 const SidebarIcon = ({icon,onClick}) => (
