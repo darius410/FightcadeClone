@@ -53,7 +53,8 @@ const Sidebar = () => {
 
         
         <div className="fixed max-h-[calc(100vh - 4rem)] overflow-y-auto removeScroll items-center top-0  bottom-0 left-0 h-full  w-44 m-0 flex flex-col bg-primaryColor text-white shadow-lg">
-            
+
+       
             <button className="h-28 w-28 mt-4 hover:w-32 ease-in-out duration-150">
                 <img src={IconLogo} alt="" onClick={()=>navigate("maindisplay")}/> 
             </button>
@@ -61,6 +62,7 @@ const Sidebar = () => {
 
           
             <ul className="flex-col flex my-2 mx-auto text-primaryHighlight list-disc"  >
+            
                 
 
                 {/* SERVER ONE */}
@@ -126,17 +128,20 @@ const Sidebar = () => {
 
             <button onClick={signUserOut}>Sign Out</button>
 
-         
+power
+{isVisible && (
+        <div className="fixed max-h-[calc(100vh - 4rem)] overflow-y-auto removeScroll items-center top-0  bottom-0 left-0 h-full  w-50 m-0 flex flex-col  bg-primaryColor text-white shadow-lg" style={{ /* Add your CSS for menu positioning */ }}>
+          hello
+        </div>
+      )}
+test   
 
         </div>
 
 
         
 
-        );
-        
-
-        
+    );   
 };
 
 
