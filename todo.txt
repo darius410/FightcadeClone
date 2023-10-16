@@ -1,5 +1,7 @@
 
 Apply media queries for the layout for smaller screens
+Find a way to protect the routes in browser router
+
 
 SIDEBAR
 --Make the exit shown on hover button remove the game from the list
