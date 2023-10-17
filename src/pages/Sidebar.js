@@ -63,7 +63,13 @@ const Sidebar = () => {
           
             <ul className="flex-col flex my-2 mx-auto text-primaryHighlight list-disc"  >
             
-                
+            power
+{isVisible && (
+        <div className="absolute  max-h-[calc(100vh - 4rem)] overflow-y-auto removeScroll items-center top-0  bottom-0 left-10 h-full  w-50 m-0 flex flex-col  bg-red-700 text-white shadow-lg" style={{ /* Add your CSS for menu positioning */ }}>
+          hello
+        </div>
+      )}
+test  
 
                 {/* SERVER ONE */}
                   <span className="serverStatus"></span>
@@ -130,7 +136,7 @@ const Sidebar = () => {
 
 power
 {isVisible && (
-        <div className="fixed max-h-[calc(100vh - 4rem)] overflow-y-auto removeScroll items-center top-0  bottom-0 left-0 h-full  w-50 m-0 flex flex-col  bg-primaryColor text-white shadow-lg" style={{ /* Add your CSS for menu positioning */ }}>
+        <div className="absolute max-h-[calc(100vh - 4rem)] overflow-y-auto removeScroll items-center top-0  bottom-0 left-0 h-full  w-50 m-0 flex flex-col  bg-red-500 text-white shadow-lg" style={{ /* Add your CSS for menu positioning */ }}>
           hello
         </div>
       )}
