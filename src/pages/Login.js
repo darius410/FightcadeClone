@@ -45,7 +45,7 @@ signInWithEmailAndPassword(authorize, email, password)
         signInWithPopup(authorize, provider).then((result) => {
         localStorage.setItem("isAuth", true);
         // setIsAuth(true);
-        navigate("/dashboard");
+        navigate("/dashboard/maindisplay");
         });
 
     };

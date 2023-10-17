@@ -14,7 +14,12 @@ import mute from "../images/mute.svg"
 import { GiMagnifyingGlass, GiRingingBell } from "react-icons/gi";
 import { VscGear } from "react-icons/vsc";
 
-const Sidebar = () => {
+const Sidebar = ({ toggleNotifications }) => {
+
+    const notificationsButton = () => {
+
+        toggleNotifications();
+    };
    
     const navigate = useNavigate();
         // const [isAuth, setIsAuth] = useState(false);
@@ -29,11 +34,8 @@ const Sidebar = () => {
 
         }
     
-    const [isVisible, setIsVisible] = useState(false);
-
-    const toggleMenu = () => {
-        setIsVisible(!isVisible)
-    };
+   
+    
 
 
     // const [servername, setServerName] = useState(true);
@@ -62,14 +64,7 @@ const Sidebar = () => {
 
           
             <ul className="flex-col flex my-2 mx-auto text-primaryHighlight list-disc"  >
-            
-            power
-{isVisible && (
-        <div className="absolute  max-h-[calc(100vh - 4rem)] overflow-y-auto removeScroll items-center top-0  bottom-0 left-10 h-full  w-50 m-0 flex flex-col  bg-red-700 text-white shadow-lg" style={{ /* Add your CSS for menu positioning */ }}>
-          hello
-        </div>
-      )}
-test  
+
 
                 {/* SERVER ONE */}
                   <span className="serverStatus"></span>
@@ -123,7 +118,10 @@ test
                 
 
             <div className="border-t-2 w-full h-56 mb-[30%] border-primaryHighlight">
-                <SidebarIcon icon={<GiRingingBell size='lg' onClick={toggleMenu}   />} />
+
+                        
+
+                <SidebarIcon icon={<GiRingingBell size='lg' onClick={toggleNotifications}   />} />
                     
 
                  <SidebarIcon icon={<VscGear size='lg' />} />
@@ -134,13 +132,7 @@ test
 
             <button onClick={signUserOut}>Sign Out</button>
 
-power
-{isVisible && (
-        <div className="absolute max-h-[calc(100vh - 4rem)] overflow-y-auto removeScroll items-center top-0  bottom-0 left-0 h-full  w-50 m-0 flex flex-col  bg-red-500 text-white shadow-lg" style={{ /* Add your CSS for menu positioning */ }}>
-          hello
-        </div>
-      )}
-test   
+
 
         </div>
 
@@ -148,6 +140,8 @@ test
         
 
     );   
+
+
 };
 
 
