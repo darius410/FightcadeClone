@@ -14,12 +14,17 @@ import mute from "../images/mute.svg"
 import { GiMagnifyingGlass, GiRingingBell } from "react-icons/gi";
 import { VscGear } from "react-icons/vsc";
 
-const Sidebar = ({ toggleNotifications }) => {
+const Sidebar = ({ toggleNotifications, toggleUserSettings }) => {
 
     const notificationsButton = () => {
 
         toggleNotifications();
     };
+
+    const userSettings = () => {
+
+        toggleUserSettings();
+    }
    
     const navigate = useNavigate();
         // const [isAuth, setIsAuth] = useState(false);
@@ -124,7 +129,7 @@ const Sidebar = ({ toggleNotifications }) => {
                 <SidebarIcon icon={<GiRingingBell size='lg' onClick={toggleNotifications}   />} />
                     
 
-                 <SidebarIcon icon={<VscGear size='lg' />} />
+                 <SidebarIcon icon={<VscGear size='lg' />} onClick={toggleUserSettings} />
                 <PlayerIcon />
             </div>
 
