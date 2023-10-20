@@ -21,6 +21,9 @@ const Sidebar = ({ toggleNotifications, toggleUserSettings }) => {
         toggleNotifications();
     };
 
+    const notificationsRef = useRef();
+    
+
     const userSettings = () => {
 
         toggleUserSettings();
@@ -57,17 +60,12 @@ const Sidebar = ({ toggleNotifications, toggleUserSettings }) => {
 
     return (
 
-
-        
         <div className="fixed max-h-[calc(100vh - 4rem)] overflow-y-auto removeScroll items-center top-0  bottom-0 left-0 h-full  w-44 m-0 flex flex-col bg-primaryColor text-white shadow-lg">
 
-       
             <button className="h-28 w-28 mt-4 hover:w-32 ease-in-out duration-150">
                 <img src={IconLogo} alt="" onClick={()=>navigate("maindisplay")}/> 
             </button>
-             
 
-          
             <ul className="flex-col flex my-2 mx-auto text-primaryHighlight list-disc"  >
 
 
@@ -84,15 +82,11 @@ const Sidebar = ({ toggleNotifications, toggleUserSettings }) => {
                  
                 </li>
 
-                
-          
-
                 {/* SERVER TWO */}
              
                 <span className="serverStatus"></span>
                 <li className="gameRoomContainer my-5 rounded-full list-disc group"onLoad={onFile}>
-                   
-                  
+
                   <button  className="serverName mainHover"  id="serverOne" ref={secondServer}>The Last Blade 2 / bakumatsu Roman - Dai Ni Maku Gekku No Kenshi  </button>
                      <div className="icons">  
                         <img alt=""  src={mute} className=" top-16 group-hover:block icon-button" />
@@ -127,8 +121,6 @@ const Sidebar = ({ toggleNotifications, toggleUserSettings }) => {
                         
 
                 <SidebarIcon icon={<GiRingingBell size='lg' onClick={toggleNotifications}   />} />
-                    
-
                  <SidebarIcon icon={<VscGear size='lg' />} onClick={toggleUserSettings} />
                 <PlayerIcon />
             </div>
