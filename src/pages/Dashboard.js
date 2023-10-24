@@ -3,6 +3,7 @@ import { Outlet } from 'react-router';
 import Sidebar from "./Sidebar"; 
 import Notifications from './Notifications';
 import UserSettings from './UserSettings';
+import MenuBackDrop from "./MenuBackDrop"
 
  
 
@@ -12,46 +13,60 @@ import UserSettings from './UserSettings';
 const Dashboard = () => {
     const [showNotifications, setShowNotifications] = useState(false);
     const [showUserSettings, setShowUserSettings] = useState(false);
-
+    const [darkLayer, setDarkLayer] = useState(false);
 
     const toggleNotifications = () => {
       setShowNotifications(!showNotifications);
+        setShowUserSettings(false)
     }
+
 
     const toggleUserSettings = () => {
       setShowUserSettings(!showUserSettings)
-    }
-    const notificationsRef = useRef(null);
-    const handleOutsideClick = (e) => {
-      if (notificationsRef.current && !notificationsRef.current.contains(e.target)) {
-        setShowNotifications(false);
-      }
+      setShowNotifications(false);
     }
 
-    useEffect(() => {
-      document.addEventListener('click', handleOutsideClick);
+    useEffect(()=>{
       
-      // Clean up the event listener when the component unmounts
-      return () => {
-        document.removeEventListener('click', handleOutsideClick);
-      };
-    }, []);
+    });
+    const showDarkLayer= () => {
+      setDarkLayer(!darkLayer)
+      
+      
+    }
+
+   
+    const notificationsRef = useRef(null);
+   
+
+   
+
  
   return (
   <div className="flex flex-row">
-    <Sidebar toggleNotifications={toggleNotifications} toggleUserSettings={toggleUserSettings} />
+    <Sidebar toggleNotifications={toggleNotifications} toggleUserSettings={toggleUserSettings}  />
 
       {showNotifications &&
       (
-      <Notifications /> 
+        <div className="" ref={notificationsRef}>
+         
+           <Notifications  /> 
+            <MenuBackDrop/>
+        </div>
+     
       )}
 
       
       {showUserSettings &&
       (
-      <UserSettings /> 
+      <div>
+        <UserSettings /> 
+        <MenuBackDrop/>
+      </div>
+      
       )}
 
+      
 
 
     <Outlet />

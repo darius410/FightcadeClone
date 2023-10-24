@@ -10,7 +10,7 @@ const UserSettings = () => {
 
 
   return (
-    <div className=" fixed z-10 max-h-[calc(100vh - 4rem)] overflow-y-auto  items-center top-0  bottom-0 left-[170px] h-full  w-1/4 m-0 flex flex-col bg-secondaryColor text-white shadow-lg">
+    <div className=" fixed z-20 max-h-[calc(100vh - 4rem)] overflow-y-auto  items-center top-0  bottom-0 left-[170px] h-full  w-1/4 m-0 flex flex-col bg-secondaryColor text-white shadow-lg">
 
     <div className="w-full text-center justify-center  place-content-center border-b-2 border-t-2 mb-[10%] border-primaryHighlight">
             <div className="w-full flex flex-col border-b-2 mb-[10%] border-primaryHighlight ">
