@@ -13,7 +13,7 @@ import MenuBackDrop from "./MenuBackDrop"
 const Dashboard = () => {
     const [showNotifications, setShowNotifications] = useState(false);
     const [showUserSettings, setShowUserSettings] = useState(false);
-    const [darkLayer, setDarkLayer] = useState(false);
+    
 
     const toggleNotifications = () => {
       setShowNotifications(!showNotifications);
@@ -26,18 +26,29 @@ const Dashboard = () => {
       setShowNotifications(false);
     }
 
-    useEffect(()=>{
-      
-    });
-    const showDarkLayer= () => {
-      setDarkLayer(!darkLayer)
-      
-      
-    }
+    
 
    
-    const notificationsRef = useRef(null);
-   
+    const sideMenuRef = useRef(null);
+    useEffect(() => {
+      const clickOutside = (e)=> {
+         if(!sideMenuRef.current.contains(e.target)){
+          setShowNotifications(false)
+          setShowUserSettings(false)
+          console.log("yay")
+        }
+        if(!sideMenuRef.current.contains(e.target)){
+         
+         }
+       
+      }
+       
+
+        document.addEventListener("click", clickOutside,true);
+        return() =>{
+          document.removeEventListener("click", clickOutside,true);
+        } 
+    },[setShowNotifications]);
 
    
 
@@ -48,21 +59,29 @@ const Dashboard = () => {
 
       {showNotifications &&
       (
-        <div className="" ref={notificationsRef}>
-         
-           <Notifications  /> 
-            <MenuBackDrop/>
+        <div className=""> 
+          <MenuBackDrop/>
+            <div className="" ref={sideMenuRef}>
+            
+              <Notifications  /> 
+            
+          </div>
         </div>
+       
      
       )}
 
       
       {showUserSettings &&
       (
-      <div>
-        <UserSettings /> 
-        <MenuBackDrop/>
+      <div >
+         <MenuBackDrop/>
+          <div ref={sideMenuRef}>
+           <UserSettings /> 
+        
+        </div>
       </div>
+      
       
       )}
 
