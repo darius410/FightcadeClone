@@ -15,13 +15,13 @@ import { GiMagnifyingGlass, GiRingingBell } from "react-icons/gi";
 import { VscGear } from "react-icons/vsc";
 
 const Sidebar = ({ toggleNotifications, toggleUserSettings }) => {
-
+    
     const notificationsButton = () => {
 
         toggleNotifications();
     };
 
-    const notificationsRef = useRef();
+   
     
 
     const userSettings = () => {

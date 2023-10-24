@@ -219,6 +219,16 @@ input[type="checkbox"] {
   transform: translateY(-0.075em);
 }
 
+    .notifications{
+        
+      transition: transform 0.3s ease-in-out;  
+    }
+ .showNotifications{
+    display: block;
+      z-index: 1;  
+      transform: translateX(100%);
+ }
+
 .learnMore{
     background:#fff;
     box-shadow: 0px 0px 10px 0.5px hsl(176,87%,57%);

@@ -5,6 +5,9 @@ import Textlogo from "../images/fightcade.svg"
 import { useNavigate } from "react-router-dom"; 
 
 
+import { useEffect,useState } from 'react';
+
+
 
 
    
@@ -20,15 +23,19 @@ import { useNavigate } from "react-router-dom";
 const MainDisplay = () => {
     const navigate = useNavigate();
  
-     
-
+    
 
 return(
           
+<>
+
+    <div className="menu">
+
+    </div>
 
             
-            
-<div className="mainLayoutContainer flex flex-col font-secondary h-full w-full"> 
+     
+     <div className="mainLayoutContainer flex flex-col font-secondary h-full w-full"> 
   {/* container */}
      <div className="mainLayout flex flex-col place-items-center ">
           {/* TOP */}
@@ -115,6 +122,8 @@ return(
 
 </div>
   
+     </>       
+
 
 )
 }
