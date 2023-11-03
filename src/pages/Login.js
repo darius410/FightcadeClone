@@ -49,6 +49,13 @@ signInWithEmailAndPassword(authorize, email, password)
         });
 
     };
+    const navigateToRegisterPage = () => {
+      
+        // setIsAuth(true);
+        navigate("/Register");
+       
+
+    };
   
 
     return (
@@ -69,6 +76,12 @@ signInWithEmailAndPassword(authorize, email, password)
                        <p className="text-center mt-8">- OR -</p>
                        
                         <button onClick={ loginToFireBase }>Sign In With Google</button>  
+
+
+                        <p className="flex flex-col">New To FightCade?</p>
+                          <button>
+                            <a className="flex flex-col" onClick={ navigateToRegisterPage }>Click here To Register</a>
+                            </button>  
 
                 </section>
         </>      

@@ -2,7 +2,8 @@ import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, serverTimestamp } from "firebase/firestore";
+import { setDoc, doc, addDoc,collection} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDAtwr7cA0EvfKNL6o8gonuF8A6MUe3InU",
@@ -22,13 +23,23 @@ const db = getFirestore(app);
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUserName] = useState("");
 
-  const handleRegister = (e) => {
+  const handleRegistration = async(e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log("User registered:", user);
+      await createUserWithEmailAndPassword(auth, email, password)
+        .then(async (userCredential) => {
+          const user = userCredential.user;
+          
+          
+          await setDoc(doc(db, "Users", user.uid), {
+            email: email,
+            lastLogin: serverTimestamp(),
+            username: username
+          });
+
+         
+        console.log("User registered:", user.uid);
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -39,26 +50,36 @@ const Register = () => {
 
   return (
     <>
-      <h2>Register</h2>
-      <form onSubmit={handleRegister}>
-        <label>Email:</label>
-        <input
-          type="email"
-          name="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit">Register</button>
-      </form>
+      <div className="flex flex-col items-center ">
+        <h2>Register</h2>
+        <form onSubmit={handleRegistration} className="">
+          <label>Email:</label>
+          <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <label>Password:</label>
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <label>User Name</label>
+            <input
+            type="username"
+            name="username"
+            value={username}
+            onChange={(e) => setUserName(e.target.value)}
+            required
+          />
+          <button type="submit" className="rounded-sm bg-red-600">Register</button>
+        </form>
+      </div>
     </>
   );
 };

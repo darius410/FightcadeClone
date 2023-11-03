@@ -1,6 +1,7 @@
 
 Apply media queries for the layout for smaller screens
 Find a way to protect the routes in browser router
+Email needs to be verified an sent to the user to confirm sign up/registration
 
 
 SIDEBAR
