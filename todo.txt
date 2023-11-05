@@ -1,7 +1,18 @@
 
-Apply media queries for the layout for smaller screens
-Find a way to protect the routes in browser router
-Email needs to be verified an sent to the user to confirm sign up/registration
+GENERAL
+--Apply media queries for the layout for smaller screens(IF NECASSARY)
+--Find a way to protect the routes in browser router
+--make sure th user session deletes when logged out
+--Make sure to disallow framing (X-frame-Options:DENY) to prevent sites from 
+framing the entire site inside of an iframe object on another site
+--make sure to initiliaze a set of rules for production or locked mode in firebase
+------the user should gett acces to the database
+------the user has an ID to verify thier database queries
+
+REGISTRATION
+--Email needs to be verified an sent to the user to confirm sign up/registration  
+--Properly formatted Email check
+--Properley formatted password check
 
 
 SIDEBAR
