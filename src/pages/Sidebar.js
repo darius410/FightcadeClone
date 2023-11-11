@@ -16,18 +16,18 @@ import { VscGear } from "react-icons/vsc";
 
 const Sidebar = ({ toggleNotifications, toggleUserSettings }) => {
     
-    const notificationsButton = () => {
+    
 
         toggleNotifications();
-    };
+    
 
    
     
 
-    const userSettings = () => {
+   
 
         toggleUserSettings();
-    }
+    
    
     const navigate = useNavigate();
         // const [isAuth, setIsAuth] = useState(false);

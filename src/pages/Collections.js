@@ -6,7 +6,7 @@ import {db} from '../config/firebaseconfig';
 
 // import {authorize} from "../config/firebaseconfig"
 
-import {getDocs ,addDoc,collection,getFirestore}from "firebase/firestore"
+import {getDocs ,addDoc,collection}from "firebase/firestore"
 
 
    
