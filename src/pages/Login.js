@@ -2,7 +2,7 @@ import React from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 // import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import axios from '../axios/axios';
 import {authorize, provider} from "../config/firebaseconfig";
 import {signInWithPopup} from "firebase/auth";

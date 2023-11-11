@@ -27,8 +27,9 @@ const MainDisplay = () => {
     const [gamesList, setGamesList] = useState([]);
 
 
-    const gamesCollection = collection(db, "Games");
+    
    useEffect(() => {
+    const gamesCollection = collection(db, "Games");
     const getListOfGames = async() => {
         try{
              const data = await getDocs(gamesCollection);
