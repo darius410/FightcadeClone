@@ -1,13 +1,13 @@
 import React from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useRef, useState, useEffect } from "react";
-import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+// import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from '../axios/axios';
+// import axios from '../axios/axios';
 import {authorize, provider} from "../config/firebaseconfig";
 import {signInWithPopup} from "firebase/auth";
 
-import {Link} from 'react-router-dom';
+
 import { useNavigate } from "react-router-dom"; //Handles the redirect to the dashboard after user signs in
 
 

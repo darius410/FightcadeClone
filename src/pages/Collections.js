@@ -1,11 +1,11 @@
 import {BsPerson} from "react-icons/bs"
 import {TbCircleLetterR} from 'react-icons/tb'
- import { VscStarEmpty, VscStarFull } from "react-icons/vsc";
+ import { VscStarFull } from "react-icons/vsc";
 import { useState,useEffect } from "react"
 import {db} from '../config/firebaseconfig';
-import { app } from '../config/firebaseconfig'
+
 // import {authorize} from "../config/firebaseconfig"
-import Sidebar from './Sidebar'
+
 import {getDocs ,addDoc,collection,getFirestore}from "firebase/firestore"
 
 

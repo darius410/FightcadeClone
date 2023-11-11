@@ -1,8 +1,4 @@
-import React, {useState,useRef,useEffect} from 'react';
-import { Outlet } from 'react-router';
-import Sidebar from "./Sidebar"; 
-import Notifications from './Notifications';
-import UserSettings from './UserSettings';
+import React from 'react';
 
  
 
