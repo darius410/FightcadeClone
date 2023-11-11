@@ -18,16 +18,6 @@ const Sidebar = ({ toggleNotifications, toggleUserSettings }) => {
     
     
 
-        toggleNotifications();
-    
-
-   
-    
-
-   
-
-        toggleUserSettings();
-    
    
     const navigate = useNavigate();
         // const [isAuth, setIsAuth] = useState(false);
