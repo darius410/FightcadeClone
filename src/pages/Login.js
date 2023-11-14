@@ -83,27 +83,29 @@ signInWithEmailAndPassword(authorize, email, password)
 {/* RIGHT SIDE */}
 
         <div className="flex w-8/12 loginPageRight items-center justify-center text-center h-screen">
-             <section className="content-around">
+             <section className=" font-primary content-around text-white w-full ">
                   
-                    <h1>Login</h1>
-                <form onSubmit={handleLogin} className="w-[300px] m-auto p-[20px]">
-                    <input  className="" type="email" placeholder="Enter Email" onChange={e => setEmail (e.target.value)} />
-                    <input type="password" placeholder="Enter Password" onChange={e => setPassword (e.target.value)} />
-                    <button type="submit" className="bg-green-300">Login</button>
+                    <h1 className="text-4xl mb-4 font-bold tracking-wider" >Login</h1>
+                <form onSubmit={handleLogin} className="flex flex-col w-11/12 mb-4 rounded-md justify-center items-center m-auto px-[150px] pb-[20px] pt-[80px] bg-primaryColor">
+                    <input  className="my-2  py-6 w-full placeholder:text-primaryHighlight text-primaryHighlight text-center text-xl font-bold font-secondary border-b-2 border-primaryHighlight bg-transparent" type="email" placeholder="Enter Email" onChange={e => setEmail (e.target.value)} />
+                    <input className="my-2 py-6 w-full  placeholder:text-primaryHighlight text-center text-xl font-bold font-secondary  border-b-2 border-primaryHighlight bg-transparent" type="password" placeholder="Enter Password" onChange={e => setPassword (e.target.value)} />
+                    <button className="learnMore rounded-md  text-2xl mt-6  px-12 py-2    font-patreon font-semibold" type="submit" onClick={handleLogin}>Connect</button>
+
+                    <p className="text-center py-4">- OR -</p>
+                       
+                       <button className="learnMore rounded-md p-2" onClick={ loginToFireBase }>Sign In With Google</button>  
+
                     {error && <span>Wrong Email Or Password!</span>}
+                    <p className="text-white font-primary pt-4">By using Fightcade you adhere to the <a href=" " className="text-secondaryHighlight">Fighting Game Community Code of Conduct.</a></p>
 
                    
                       
                 </form>     
                 
-                       <p className="text-center mt-8">- OR -</p>
-                       
-                        <button onClick={ loginToFireBase }>Sign In With Google</button>  
 
-
-                        <p className="flex flex-col">New To FightCade?</p>
-                          <button>
-                            <a className="flex flex-col" onClick={ navigateToRegisterPage }>Click here To Register</a>
+                        <p className="flex flex-col py-4 text-2xl">New To FightCade?</p>
+                          <button className="learnMore rounded-md px-5 py-2">
+                            <a href=" " className="flex flex-col text-lg" onClick={ navigateToRegisterPage }>Click Here To Register</a>
                             </button>  
 
                 </section>
