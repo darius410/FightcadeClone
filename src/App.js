@@ -27,7 +27,7 @@ function App() {
 
         <Route path="Dashboard" element={<Dashboard />} > 
           <Route path="MainDisplay" element={<MainDisplay />} /> 
-          <Route path="Maindisplay/LearnMore" element={<LearnMore />} /> 
+          <Route path="MainDisplay/LearnMore" element={<LearnMore />} /> 
 
           <Route path="Collections" element={<Collections />} /> 
         </Route>
