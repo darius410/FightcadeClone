@@ -60,11 +60,12 @@ signInWithEmailAndPassword(authorize, email, password)
 
     return (
         <>
-                <section className="flex flex-col">
+        <div className="flex items-center justify-center text-center h-screen ">
+             <section className="content-around">
                   
                     <h1>Login</h1>
-                <form onSubmit={handleLogin}>
-                    <input type="email" placeholder="Enter Email" onChange={e => setEmail (e.target.value)} />
+                <form onSubmit={handleLogin} className="w-[300px] m-auto p-[20px]">
+                    <input  className="" type="email" placeholder="Enter Email" onChange={e => setEmail (e.target.value)} />
                     <input type="password" placeholder="Enter Password" onChange={e => setPassword (e.target.value)} />
                     <button type="submit" className="bg-green-300">Login</button>
                     {error && <span>Wrong Email Or Password!</span>}
@@ -84,6 +85,8 @@ signInWithEmailAndPassword(authorize, email, password)
                             </button>  
 
                 </section>
+        </div>
+               
         </>      
             )
       

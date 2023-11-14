@@ -9,6 +9,11 @@ framing the entire site inside of an iframe object on another site
 ------the user should gett acces to the database
 ------the user has an ID to verify thier database queries
 
+LOGIN
+--Design the login page forms and background
+
+
+
 REGISTRATION
 --Email needs to be verified an sent to the user to confirm sign up/registration  
 --Properly formatted Email check
