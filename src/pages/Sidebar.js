@@ -1,7 +1,7 @@
 
 // ?MISC MISC MISC MISC MISC MISC
 import PlayerIcon from '../PlayerIcon'
-import { useState } from "react";
+// import { useState } from "react";
 // ?LOGIC LOGIC LOGIC LOGIC LOGIC
 import { useRef } from "react";
 import { signOut } from "firebase/auth";
@@ -16,18 +16,8 @@ import { VscGear } from "react-icons/vsc";
 
 const Sidebar = ({ toggleNotifications, toggleUserSettings }) => {
     
-    const notificationsButton = () => {
-
-        toggleNotifications();
-    };
-
-   
     
 
-    const userSettings = () => {
-
-        toggleUserSettings();
-    }
    
     const navigate = useNavigate();
         // const [isAuth, setIsAuth] = useState(false);

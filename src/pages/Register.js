@@ -3,7 +3,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore, serverTimestamp } from "firebase/firestore";
-import { setDoc, doc, addDoc,collection} from "firebase/firestore";
+import { setDoc, doc} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDAtwr7cA0EvfKNL6o8gonuF8A6MUe3InU",

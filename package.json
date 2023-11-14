@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "index.html",
   "private": true,
-  "homepage": "https://darius410.github.io/FightcadeClone/",
+  "homepage": "https://fightcade.netlify.app/",
   "license": "ISC",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
