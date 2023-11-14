@@ -1,13 +1,16 @@
 import React from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useState } from "react";
-// import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import axios from '../axios/axios';
+import { useRef, useState, useEffect } from "react";
+import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from '../axios/axios';
+import Textlogo from "../images/fightcade.svg"
+import IconLogo from "../images/logo.svg"
+
 import {authorize, provider} from "../config/firebaseconfig";
 import {signInWithPopup} from "firebase/auth";
 
-
+import {Link} from 'react-router-dom';
 import { useNavigate } from "react-router-dom"; //Handles the redirect to the dashboard after user signs in
 
 
@@ -60,7 +63,26 @@ signInWithEmailAndPassword(authorize, email, password)
 
     return (
         <>
-        <div className="flex items-center justify-center text-center h-screen ">
+<div className="flex">
+
+        <div className=" flex flex-col loginPageLeft items-center justify-center text-center h-screen ">
+
+
+            <div className=" w-28">
+                <img src={IconLogo} alt="" onClick={()=>navigate("maindisplay")}/> 
+            </div>
+
+          <div className=" flex flex-col my-2 px-14"> 
+              <img src={Textlogo} alt=""  className="w-full mainLogo" />
+              <h1 className="mt-4 font-primary text-xl font-bold tracking-[.50em] text-yellow-50 ">ONLINE RETRO GAMING</h1>
+          </div>
+
+  
+            
+       </div>
+{/* RIGHT SIDE */}
+
+        <div className="flex w-8/12 loginPageRight items-center justify-center text-center h-screen">
              <section className="content-around">
                   
                     <h1>Login</h1>
@@ -87,6 +109,11 @@ signInWithEmailAndPassword(authorize, email, password)
                 </section>
         </div>
                
+
+</div>
+        
+
+       
         </>      
             )
       

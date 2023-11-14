@@ -273,6 +273,15 @@ input[type="checkbox"] {
        width:100%;
        
     }
+    .loginPageLeft{
+        background-color:hsl(311,33%,15%);
+    }
+    .loginPageRight{
+        background-color:hsl(322,29%,22%);
+       
+      position:relative;
+       width:100%;
+    }
 
     .mainLayout::after {
         content:'';
