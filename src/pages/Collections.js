@@ -1,12 +1,12 @@
 import {BsPerson} from "react-icons/bs"
 import {TbCircleLetterR} from 'react-icons/tb'
- import { VscStarEmpty, VscStarFull } from "react-icons/vsc";
+ import { VscStarFull } from "react-icons/vsc";
 import { useState,useEffect } from "react"
 import {db} from '../config/firebaseconfig';
-import { app } from '../config/firebaseconfig'
+
 // import {authorize} from "../config/firebaseconfig"
-import Sidebar from './Sidebar'
-import {getDocs ,addDoc,collection,getFirestore}from "firebase/firestore"
+
+import {getDocs ,addDoc,collection}from "firebase/firestore"
 
 
    
@@ -27,8 +27,9 @@ const MainDisplay = () => {
     const [gamesList, setGamesList] = useState([]);
 
 
-    const gamesCollection = collection(db, "Games");
+    
    useEffect(() => {
+    const gamesCollection = collection(db, "Games");
     const getListOfGames = async() => {
         try{
              const data = await getDocs(gamesCollection);
