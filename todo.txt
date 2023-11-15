@@ -10,7 +10,7 @@ framing the entire site inside of an iframe object on another site
 ------the user has an ID to verify thier database queries
 
 LOGIN
---Design the login page forms and background
+--research any other authorizations techniques for login pages
 
 
 
@@ -18,6 +18,7 @@ REGISTRATION
 --Email needs to be verified an sent to the user to confirm sign up/registration  
 --Properly formatted Email check
 --Properley formatted password check
+--Design the register page forms and background
 
 
 SIDEBAR
