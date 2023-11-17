@@ -87,7 +87,19 @@ signInWithEmailAndPassword(authorize, email, password)
                   
                     <h1 className="text-4xl mb-4 font-bold tracking-wider" >Login</h1>
                 <form onSubmit={handleLogin} className="flex flex-col w-11/12 mb-4 rounded-md justify-center items-center m-auto px-[150px] pb-[20px] pt-[80px] bg-primaryColor">
-                    <input  className="my-2  py-6 w-full placeholder:text-primaryHighlight text-primaryHighlight text-center text-xl font-bold font-secondary border-b-2 border-primaryHighlight bg-transparent" type="email" placeholder="Enter Email" onChange={e => setEmail (e.target.value)} />
+                    <input  className="
+                    my-2
+                    py-6 
+                    w-full 
+                    placeholder:text-primaryHighlight
+                    text-primaryHighlight 
+                    text-center 
+                    text-xl 
+                    font-bold 
+                    font-secondary 
+                    border-b-2 
+                    border-primaryHighlight 
+                    bg-transparent" type="email" placeholder="Enter Email" onChange={e => setEmail (e.target.value)} />
                     <input className="my-2 py-6 w-full  placeholder:text-primaryHighlight text-center text-xl font-bold font-secondary  border-b-2 border-primaryHighlight bg-transparent" type="password" placeholder="Enter Password" onChange={e => setPassword (e.target.value)} />
                     <button className="learnMore rounded-md  text-2xl mt-6  px-12 py-2    font-patreon font-semibold" type="submit" onClick={handleLogin}>Connect</button>
 
