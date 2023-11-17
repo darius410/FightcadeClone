@@ -101,13 +101,16 @@ signInWithEmailAndPassword(authorize, email, password)
                     border-primaryHighlight 
                     bg-transparent" type="email" placeholder="Enter Email" onChange={e => setEmail (e.target.value)} />
                     <input className="my-2 py-6 w-full  placeholder:text-primaryHighlight text-center text-xl font-bold font-secondary  border-b-2 border-primaryHighlight bg-transparent" type="password" placeholder="Enter Password" onChange={e => setPassword (e.target.value)} />
+
+                    {error && <span>Wrong Email Or Password!</span>}
+
                     <button className="learnMore rounded-md  text-2xl mt-6  px-12 py-2    font-patreon font-semibold" type="submit" onClick={handleLogin}>Connect</button>
 
                     <p className="text-center py-4">- OR -</p>
                        
                        <button className="learnMore rounded-md p-2" onClick={ loginToFireBase }>Sign In With Google</button>  
 
-                    {error && <span>Wrong Email Or Password!</span>}
+                   
                     <p className="text-white font-primary pt-4">By using Fightcade you adhere to the <a href=" " className="text-secondaryHighlight">Fighting Game Community Code of Conduct.</a></p>
 
                    

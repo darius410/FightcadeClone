@@ -18,7 +18,7 @@ REGISTRATION
 --Email needs to be verified an sent to the user to confirm sign up/registration  
 --Properly formatted Email check
 --Properley formatted password check
---Design the register page forms and background
+
 
 
 SIDEBAR
