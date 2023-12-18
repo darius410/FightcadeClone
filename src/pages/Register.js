@@ -42,7 +42,10 @@ const Register = () => {
           await setDoc(doc(db, "Users", user.uid), {
             email: email,
             lastLogin: serverTimestamp(),
-            username: username
+            username: username,
+            gamesarray: [ 
+            
+            ]
           });
 
          

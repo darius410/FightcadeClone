@@ -2,23 +2,55 @@ import {BsPerson} from "react-icons/bs"
 import {TbCircleLetterR} from 'react-icons/tb'
  import { VscStarFull } from "react-icons/vsc";
 import { useState,useEffect } from "react"
-import {db} from '../config/firebaseconfig';
+
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import {getDoc ,updateDoc, doc, collection,arrayUnion}from "firebase/firestore"
+
+
+
 
 // import {authorize} from "../config/firebaseconfig"
 
-import {getDocs ,addDoc,collection}from "firebase/firestore"
+
+
+
+
+const auth = getAuth();
+const db = getFirestore();
+
+
 
 
    
-function addGame(){
+const addGame = async() =>{
   
-  const docRef = addDoc(collection(db, "Users","cosmic-borg "), {
-    name: "Tokyo",
-    country: "Japan"
+ //Function should make a new item called game1,game2,etc
+  try{ 
+
+        const user = auth.currentUser;
+        console.log(user)
+        const gamesListRef = doc(db, "Users", user.uid)
+        console.log(gamesListRef)
+        const userDocSnapshot = await getDoc(gamesListRef);
+        const userData = userDocSnapshot.data();
+        const currentGamesArray = userData.gamesarray || [];
+        if (currentGamesArray.length >= 3) {
+          console.log("User already has 3 or more games.");
+          return; // Stop execution if the user has reached the limit
+        }
+     // function also needs to check for more then 3 items in array
+  await updateDoc(gamesListRef, {
+   gamesarray:arrayUnion("drn23424"),
+   
   });
-  console.log("Document written with ID: ", docRef.id);   
+    
+  console.log("Document written with ID: ", gamesListRef.id);   
   
+  }catch(error){
+    console.log("there was a problem" ,error)
   }
+};
 
 
 const MainDisplay = () => {
@@ -32,7 +64,7 @@ const MainDisplay = () => {
     const gamesCollection = collection(db, "Games");
     const getListOfGames = async() => {
         try{
-             const data = await getDocs(gamesCollection);
+             const data = await getDoc(gamesCollection);
              const filteredGames = data.docs.map((doc) => ({
                 ...doc.data(),
                 id: doc.id,
@@ -130,7 +162,7 @@ return (
                         <Favorites icon={<VscStarFull size='xs'/>} />
                           Fav</button>
                       <button className="learnMore rounded-md px-6 font-patreon font-semibold" 
-                      onClick={addGame}>Join</button>
+                      onClick={() => addGame()}>Join</button>
                     </div>
                     
              </li>
