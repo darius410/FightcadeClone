@@ -37,6 +37,7 @@ const Sidebar = ({ toggleNotifications, toggleUserSettings }) => {
 
 
     // const [servername, setServerName] = useState(true);
+    // Making the text end with three periods
     const servername = useRef(null);
     const secondServer = useRef(null);
     const thirdServer =  useRef(null);
