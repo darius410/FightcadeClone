@@ -16,6 +16,7 @@ LOGIN
 
 REGISTRATION
 --Email needs to be verified an sent to the user to confirm sign up/registration  
+--Confirmation Page needs to show after registration 
 --Properly formatted Email check
 --Properley formatted password check
 
@@ -38,3 +39,4 @@ MAIN LAYOUT
 ------make the search have a function to search through and filter the results ass needed
 --make the game items capable of being added to the sidebar 
 ------make that same selection appear only for the user that is signed in currently 
+--make that game able to be removed from sidebar

@@ -5,7 +5,7 @@ import { useState,useEffect } from "react"
 
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-import {getDoc ,updateDoc, doc, collection,arrayUnion}from "firebase/firestore"
+import {getDocs ,getDoc,updateDoc, doc, collection,arrayUnion}from "firebase/firestore"
 
 
 
@@ -23,7 +23,7 @@ const db = getFirestore();
 
 
    
-const addGame = async() =>{
+const addGame = async(game) =>{
   
  //Function should make a new item called game1,game2,etc
   try{ 
@@ -41,7 +41,7 @@ const addGame = async() =>{
         }
      // function also needs to check for more then 3 items in array
   await updateDoc(gamesListRef, {
-   gamesarray:arrayUnion("drn23424"),
+   gamesarray:arrayUnion(game),
    
   });
     
@@ -64,7 +64,7 @@ const MainDisplay = () => {
     const gamesCollection = collection(db, "Games");
     const getListOfGames = async() => {
         try{
-             const data = await getDoc(gamesCollection);
+             const data = await getDocs(gamesCollection);
              const filteredGames = data.docs.map((doc) => ({
                 ...doc.data(),
                 id: doc.id,
@@ -98,7 +98,7 @@ const MainDisplay = () => {
       
    };
    getListOfGems();
-  },[]); 
+  },[gemsCollection]); 
 
 
    
@@ -162,7 +162,7 @@ return (
                         <Favorites icon={<VscStarFull size='xs'/>} />
                           Fav</button>
                       <button className="learnMore rounded-md px-6 font-patreon font-semibold" 
-                      onClick={() => addGame()}>Join</button>
+                      onClick={() => addGame(`${game.title}`)}>Join</button>
                     </div>
                     
              </li>
