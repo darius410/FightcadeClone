@@ -5,7 +5,6 @@ import Notifications from './Notifications';
 import UserSettings from './UserSettings';
 import MenuBackDrop from "./MenuBackDrop"
 
- 
 
 
 
@@ -13,7 +12,7 @@ import MenuBackDrop from "./MenuBackDrop"
 const Dashboard = () => {
     const [showNotifications, setShowNotifications] = useState(false);
     const [showUserSettings, setShowUserSettings] = useState(false);
-    
+  
 
     const toggleNotifications = () => {
       setShowNotifications(!showNotifications);
@@ -25,10 +24,8 @@ const Dashboard = () => {
       setShowUserSettings(!showUserSettings)
       setShowNotifications(false);
     }
-
     
-
-   
+    
     const sideMenuRef = useRef(null);
     useEffect(() => {
       const clickOutside = (e)=> {

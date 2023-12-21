@@ -5,7 +5,7 @@ import { useState,useEffect } from "react"
 
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-import {getDoc ,updateDoc, doc, collection,arrayUnion}from "firebase/firestore"
+import {getDocs ,getDoc,updateDoc, doc, collection,arrayUnion}from "firebase/firestore"
 
 
 
@@ -64,7 +64,7 @@ const MainDisplay = () => {
     const gamesCollection = collection(db, "Games");
     const getListOfGames = async() => {
         try{
-             const data = await getDoc(gamesCollection);
+             const data = await getDocs(gamesCollection);
              const filteredGames = data.docs.map((doc) => ({
                 ...doc.data(),
                 id: doc.id,
@@ -98,7 +98,7 @@ const MainDisplay = () => {
       
    };
    getListOfGems();
-  },[]); 
+  },[gemsCollection]); 
 
 
    
