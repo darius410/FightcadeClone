@@ -8,9 +8,10 @@ import { signOut } from "firebase/auth";
 import { authorize } from "../config/firebaseconfig";
 import { useNavigate } from "react-router-dom";
 import { getFirestore } from "firebase/firestore";
-import { collection ,doc} from 'firebase/firestore';
+import { collection, collectionGroup ,doc} from 'firebase/firestore';
 import { getAuth } from "firebase/auth";
 import { getDocs  } from 'firebase/firestore';
+import { query, where } from "firebase/firestore";  
 // ?ICONS ICONS ICONS ICONS ICONS ICONS 
 import IconLogo from "../images/logo.svg"
 import exit from "../images/exit.svg"
@@ -61,27 +62,32 @@ const Sidebar = ({toggleNotifications, toggleUserSettings }) => {
 const [userArray, setUserArray] = useState([]);
 useEffect(() => {
     const getArrayOfGames = async() => {       
-        
-        if(user){
+        auth.onAuthStateChanged(async user => {
+
+               if(user){
+           
         const gamesArray = doc(db,"Users",user.uid)
           const gamesArrayRef = collection(gamesArray, "gamesarray")
+        
               try{
                    
                    const data = await getDocs(gamesArrayRef);
-                   console.log(gamesArrayRef.path)
-                   const filteredGames = data.docs.map((doc) => ({
+                   console.log(gamesArrayRef)
+                   const dataArray = data.docs.map((doc) => ({
                       ...doc.data(),
                       id: doc.id,
                       
               }));
-                console.log(filteredGames)
-                   setUserArray(filteredGames)
+                console.log(dataArray)
+                   setUserArray(dataArray)
               }
              catch (err){
               console.log(err);
              };
              
           };
+        })
+     
         }
         
           getArrayOfGames();
@@ -115,7 +121,11 @@ useEffect(() => {
             <ul className="flex-col flex my-2 mx-auto text-primaryHighlight list-disc"  >
                 {console.log(userArray)}
                 {userArray.map((item)=> (
-                    <li key = {item.id}>{item.username}</li>
+                    <>
+                    <li key={item.id}>{item.array[0]}</li>
+                    <li key={item.id}>{item.array[1]}</li>
+                    <li key={item.id}>{item.array[2]}</li>
+                    </>
                    ))}
                    
                 {/* SERVER ONE */}
