@@ -8,22 +8,38 @@ import { signOut } from "firebase/auth";
 import { authorize } from "../config/firebaseconfig";
 import { useNavigate } from "react-router-dom";
 import { getFirestore } from "firebase/firestore";
-import { collection,doc } from 'firebase/firestore';
+import { collection, collectionGroup ,doc} from 'firebase/firestore';
 import { getAuth } from "firebase/auth";
 import { getDocs  } from 'firebase/firestore';
+import { query, where } from "firebase/firestore";  
 // ?ICONS ICONS ICONS ICONS ICONS ICONS 
 import IconLogo from "../images/logo.svg"
 import exit from "../images/exit.svg"
 import mute from "../images/mute.svg"
 import { GiMagnifyingGlass, GiRingingBell } from "react-icons/gi";
 import { VscGear } from "react-icons/vsc";
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDAtwr7cA0EvfKNL6o8gonuF8A6MUe3InU",
+    authDomain: "fightcade-clone.firebaseapp.com",
+    projectId: "fightcade-clone",
+    storageBucket: "fightcade-clone.appspot.com",
+    messagingSenderId: "749981233145",
+    appId: "1:749981233145:web:6f0d31f5051da3ef059728",
+    measurementId: "G-62Y66S0C70"
+  };
+    const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+    const db = getFirestore();
 
 const Sidebar = ({toggleNotifications, toggleUserSettings }) => {
     
     
 
-    const [userArray, setUserArray] = useState([]);
+    
 
+        
     
     const navigate = useNavigate();
         // const [isAuth, setIsAuth] = useState(false);
@@ -38,33 +54,44 @@ const Sidebar = ({toggleNotifications, toggleUserSettings }) => {
 
         }
 
-       //!Futre me continue to fetch the gamesarray from firebase user
-
-        useEffect(() => {
-          const db = getFirestore();
-          const auth = getAuth();
            const user = auth.currentUser;
-          const gamesArray = collection(db, "Users", user.uid,"gamesarray");
-          console.log(gamesArray);
-         
-          console.log(user)
-         
-          const getListOfGames = async() => {
+           console.log(user)
+       //* Future me continue to fetch the gamesarray from firebase user
+
+
+const [userArray, setUserArray] = useState([]);
+useEffect(() => {
+    const getArrayOfGames = async() => {       
+        auth.onAuthStateChanged(async user => {
+
+               if(user){
+           
+        const gamesArray = doc(db,"Users",user.uid)
+          const gamesArrayRef = collection(gamesArray, "gamesarray")
+        
               try{
-                   const data = await getDocs(gamesArray);
-                   const filteredGames = data.docs.map((doc) => ({
+                   
+                   const data = await getDocs(gamesArrayRef);
+                   console.log(gamesArrayRef)
+                   const dataArray = data.docs.map((doc) => ({
                       ...doc.data(),
                       id: doc.id,
+                      
               }));
-                   setUserArray(filteredGames)
+                console.log(dataArray)
+                   setUserArray(dataArray)
               }
              catch (err){
               console.log(err);
              };
              
           };
-          getListOfGames();
-         },[]); 
+        })
+     
+        }
+        
+          getArrayOfGames();
+         },[user]); 
     
    
     
@@ -90,11 +117,16 @@ const Sidebar = ({toggleNotifications, toggleUserSettings }) => {
             <button className="h-28 w-28 mt-4 hover:w-32 ease-in-out duration-150">
                 <img src={IconLogo} alt="" onClick={()=>navigate("maindisplay")}/> 
             </button>
-                {userArray.map((game)=> (
-                    <li key ={game.id}>{game}</li>
-                   ))}
+               
             <ul className="flex-col flex my-2 mx-auto text-primaryHighlight list-disc"  >
-
+                {console.log(userArray)}
+                {userArray.map((item)=> (
+                    <>
+                    <li key={item.id}>{item.array[0]}</li>
+                    <li key={item.id}>{item.array[1]}</li>
+                    <li key={item.id}>{item.array[2]}</li>
+                    </>
+                   ))}
                    
                 {/* SERVER ONE */}
                   <span className="serverStatus"></span>
