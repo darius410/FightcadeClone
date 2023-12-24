@@ -19,6 +19,7 @@ REGISTRATION
 --Confirmation Page needs to show after registration 
 --Properly formatted Email check
 --Properley formatted password check
+--User registration needs to create a new collection in the database rather than a new array for the games Array
 
 
 
