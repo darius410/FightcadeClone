@@ -35,7 +35,9 @@ const auth = getAuth(app);
 
 const Sidebar = ({toggleNotifications, toggleUserSettings }) => {
     
-    
+    const truncateString = (str, maxLength) => {
+        return str.length > maxLength ? str.slice(0, maxLength).toUpperCase() + "..." : str.toUpperCase();
+      };
 
     
 
@@ -99,16 +101,7 @@ useEffect(() => {
 
     // const [servername, setServerName] = useState(true);
     // Making the text end with three periods
-    const servername = useRef(null);
-    const secondServer = useRef(null);
-    const thirdServer =  useRef(null);
-     
-    const onFile = () => {
-        servername.current.innerText = servername.current.innerText.slice(0, 28).toUpperCase() + "...";
-        secondServer.current.innerText = secondServer.current.innerText.slice(0, 28).toUpperCase() + "...";
-        thirdServer.current.innerText = thirdServer.current.innerText.slice(0, 28).toUpperCase() + "...";
-
-    };
+ 
 
     return (
 
@@ -120,20 +113,20 @@ useEffect(() => {
                
             <ul className="flex-col flex my-2 mx-auto text-primaryHighlight list-disc"  >
                 {console.log(userArray)}
-                {userArray.map((item)=> (
+                {userArray.map((item, index)=> (
                     <>
-                    <li key={item.id}>{item.array[0]}</li>
-                    <li key={item.id}>{item.array[1]}</li>
-                    <li key={item.id}>{item.array[2]}</li>
-                    </>
-                   ))}
-                   
-                {/* SERVER ONE */}
+                    
+                        
+                  
+
+
+                    <div key={index}>
+                    {/* SERVER ONE */}
                   <span className="serverStatus"></span>
-                <li className="gameRoomContainer my-5 rounded-full list-disc group"onLoad={onFile}>
+                <li className="gameRoomContainer my-5 rounded-full list-disc group">
                 
                   
-                  <button  className="serverName mainHover"  id="serverOne" ref={servername}>Street Fighter III 3rd Strike:Fight For Japan </button>
+                  <button  className="serverName mainHover" >{truncateString(item.id, 25)}</button>
                      <div className="icons">  
                         <img alt=""  src={mute} className="group-hover:block icon-button" />
                         <img alt="" src={exit} className="mt-3  group-hover:block icon-button"  />
@@ -141,32 +134,14 @@ useEffect(() => {
                  
                 </li>
 
-                {/* SERVER TWO */}
-             
-                <span className="serverStatus"></span>
-                <li className="gameRoomContainer my-5 rounded-full list-disc group"onLoad={onFile}>
-
-                  <button  className="serverName mainHover"  id="serverOne" ref={secondServer}>The Last Blade 2 / bakumatsu Roman - Dai Ni Maku Gekku No Kenshi  </button>
-                     <div className="icons">  
-                        <img alt=""  src={mute} className=" top-16 group-hover:block icon-button" />
-                        <img alt="" src={exit} className=" mt-3 group-hover:block icon-button"  />
                     </div>
-                 
-                </li>
-                
-                {/* SERVER THREE */}
-               <span className="serverStatus"></span>
-                <li className="gameRoomContainer my-5 rounded-full list-disc group"onLoad={onFile}>
+               
+                    </>
+                   ))}
                    
-                  
-                    <img alt=""  src="./mute.svg" className=" hidden w-auto h-6 absolute left-[103px] top-16 group-hover:block" />
-                  <button  className="serverName mainHover"  id="serverOne" ref={thirdServer}>Rage Of Dragons (NGM -264?) </button>
-                     <div className="icons">  
-                        <img alt=""  src={mute} className=" top-16 group-hover:block icon-button" />
-                        <img alt="" src={exit} className=" mt-3 group-hover:block icon-button"  />
-                    </div>
-                 
-                </li>
+              
+
+        
                 
                
                 <SidebarIcon icon={<GiMagnifyingGlass size='lg' />} alt="Search Icon" onClick={()=>navigate("collections")}/>
@@ -186,7 +161,7 @@ useEffect(() => {
 
         
 
-           
+          
 
 
 
