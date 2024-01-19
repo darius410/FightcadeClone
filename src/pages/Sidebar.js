@@ -186,7 +186,7 @@ useEffect(() => {
 
         
 
-            <button onClick={signUserOut}>Sign Out</button>
+           
 
 
 
