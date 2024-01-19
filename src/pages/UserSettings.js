@@ -1,13 +1,27 @@
 import React from 'react'
 import { useNavigate } from 'react-router'
+import { signOut } from "firebase/auth";
+
+import { authorize } from "../config/firebaseconfig";
 
 
 
 
 
-const UserSettings = () => {
+const UserSettings = ( ) => {
   const navigate = useNavigate();
+  
+  // const [isAuth, setIsAuth] = useState(false);
+  
+  const redirect = useNavigate();
+  const signUserOut = () => {
+      signOut(authorize).then(() =>{
+          localStorage.clear()
+          // setIsAuth(false);
+          redirect("/login");
+  })
 
+  }
 
   return (
     <div className=" fixed z-20 max-h-[calc(100vh - 4rem)] overflow-y-auto  items-center top-0  bottom-0 left-[170px] h-full  w-1/4 m-0 flex flex-col bg-secondaryColor text-white shadow-lg">
@@ -96,7 +110,11 @@ const UserSettings = () => {
                     <button className=" learnMore inline-block rounded-md  w-33 text-xl px-4 p-4 mb-20 font-patreon font-semibold" onClick={()=>navigate("learnmore")}>Learn More</button>
                   </div>
             </div>
-       
+
+
+      <div className="w-full text-center justify-center  place-content-center border-b-2 mb-[10%] border-primaryHighlight"></div>
+
+            <button className=" learnMore inline-block rounded-md  w-22 text-l px-4 p-4 mb-10 font-patreon font-semibold" onClick={signUserOut}>Sign Out</button>
 
       </div>
           
