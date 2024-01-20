@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { getFirestore } from "firebase/firestore";
 import { collection, collectionGroup ,doc} from 'firebase/firestore';
 import { getAuth } from "firebase/auth";
-import { getDocs  } from 'firebase/firestore';
+import { getDocs ,deleteDoc } from 'firebase/firestore';
 import { query, where } from "firebase/firestore";  
 // ?ICONS ICONS ICONS ICONS ICONS ICONS 
 import IconLogo from "../images/logo.svg"
@@ -39,7 +39,16 @@ const Sidebar = ({toggleNotifications, toggleUserSettings }) => {
         return str.length > maxLength ? str.slice(0, maxLength).toUpperCase() + "..." : str.toUpperCase();
       };
 
+      const removeGame = async (gameId) => {
+        const gameDocRef = doc(db, "Users", auth.currentUser.uid, "gamesarray", gameId);
     
+        try {
+          await deleteDoc(gameDocRef);
+          console.log(`Document with ID ${gameId} removed successfully`);
+        } catch (error) {
+          console.error("Error removing document: ", error);
+        }
+      };
 
         
     
@@ -128,7 +137,7 @@ useEffect(() => {
                   
                   <button  className="serverName mainHover" >{truncateString(item.id, 25)}</button>
                      <div className="icons">  
-                        <img alt=""  src={mute} className="group-hover:block icon-button" />
+                        <img  alt=""  src={mute} className="group-hover:block icon-button serverIcons" onClick={() => removeGame(item.id)} />
                         <img alt="" src={exit} className="mt-3  group-hover:block icon-button"  />
                     </div>
                  
