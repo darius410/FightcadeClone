@@ -40,10 +40,10 @@ const Sidebar = ({toggleNotifications, toggleUserSettings }) => {
       };
 
       const removeGame = async (gameId) => {
-        const gameDocRef = doc(db, "Users", auth.currentUser.uid, "gamesarray", gameId);
+        const deleteGameDocRef = doc(db, "Users", auth.currentUser.uid, "gamesarray", gameId);
     
         try {
-          await deleteDoc(gameDocRef);
+          await deleteDoc(deleteGameDocRef);
           console.log(`Document with ID ${gameId} removed successfully`);
         } catch (error) {
           console.error("Error removing document: ", error);
@@ -124,21 +124,16 @@ useEffect(() => {
                 {console.log(userArray)}
                 {userArray.map((item, index)=> (
                     <>
-                    
-                        
-                  
-
 
                     <div key={index}>
                     {/* SERVER ONE */}
                   <span className="serverStatus"></span>
                 <li className="gameRoomContainer my-5 rounded-full list-disc group">
-                
-                  
+                       
                   <button  className="serverName mainHover" >{truncateString(item.id, 25)}</button>
                      <div className="icons">  
-                        <img  alt=""  src={mute} className="group-hover:block icon-button serverIcons" onClick={() => removeGame(item.id)} />
-                        <img alt="" src={exit} className="mt-3  group-hover:block icon-button"  />
+                        <img  alt=""  src={mute} className="group-hover:block icon-button serverIcons"  />
+                        <img alt="" src={exit} className="mt-3  group-hover:block icon-button" onClick={() => removeGame(item.id)} />
                     </div>
                  
                 </li>

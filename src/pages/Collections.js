@@ -58,7 +58,16 @@ const MainDisplay = () => {
 
     const [gamesList, setGamesList] = useState([]);
 
-
+      const addGame = async (gameId) => {
+      const deleteGameDocRef = doc(db, "Users", auth.currentUser.uid, "gamesarray", gameId);
+  
+      try {
+        await deleteDoc(deleteGameDocRef);
+        console.log(`Document with ID ${gameId} removed successfully`);
+      } catch (error) {
+        console.error("Error removing document: ", error);
+      }
+    };
     
    useEffect(() => {
     const gamesCollection = collection(db, "Games");
