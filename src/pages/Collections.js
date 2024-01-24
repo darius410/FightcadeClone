@@ -5,7 +5,7 @@ import { useState,useEffect } from "react"
 
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-import {getDocs ,getDoc,updateDoc, doc,addDoc, collection,arrayUnion}from "firebase/firestore"
+import {getDocs ,getDoc,updateDoc, doc,setDoc,addDoc, collection,arrayUnion}from "firebase/firestore"
 
 
 
@@ -22,38 +22,12 @@ const db = getFirestore();
 
 
 
-   
-const addGame = async(game) =>{
-  
- //Function should make a new item called game1,game2,etc
-  try{ 
 
-        const user = auth.currentUser;
-        console.log(user)
-        const gamesListRef = doc(db, "Users", auth.currentUser.uid)
-        console.log(gamesListRef)
-        const userDocSnapshot = await getDoc(gamesListRef,"gamesarray");
-        const userData = userDocSnapshot.data();
-        const currentGamesArray = userData.gamesarray || [];
-        if (currentGamesArray.length >= 3) {
-          console.log("User already has 3 or more games.");
-          return; // Stop execution if the user has reached the limit
-        }
-     // function also needs to check for more then 3 items in array
-  await updateDoc(gamesListRef, {
-   gamesarray:arrayUnion(game),
-   
-  });
-    
-  console.log("Document written with ID: ", gamesListRef.id);   
-  
-  }catch(error){
-    console.log("there was a problem" ,error)
-  }
-};
 
 
 const MainDisplay = () => {
+
+
 
 
     const [gamesList, setGamesList] = useState([]);
@@ -101,6 +75,46 @@ const MainDisplay = () => {
   },[gemsCollection]); 
 
 
+  const addGame = async(gameTitle) =>{
+  
+ 
+    try{ 
+  
+          const user = auth.currentUser;
+          console.log(user)
+  
+  
+          const gamesListRef = doc(db, "Users", auth.currentUser.uid)
+          console.log(gamesListRef)
+          const userDocSnapshot = await getDoc(gamesListRef,"gamesarray");
+          console.log(userDocSnapshot)
+          const userData = userDocSnapshot.data()
+          console.log(userData)
+          const gamesArrayRef = collection(gamesListRef,"gamesarray");
+          console.log(gamesArrayRef)
+         
+          const currentGamesArray = userData?.gamesarray || [];
+          console.log(currentGamesArray)
+          
+          if (currentGamesArray.length >= 3) {
+            console.log("User already has 3 or more games.");
+            return; // Stop execution if the user has reached the limit
+          }
+
+          if (currentGamesArray.includes(gameTitle)) {
+            console.log("Game already in the user's list.");
+            return;
+          }
+          const gameDocRef = doc(gamesArrayRef, gameTitle)
+          await setDoc(gameDocRef  ,{});
+    console.log("Document written with ID: ", gamesListRef.id);   
+    
+    }catch(error){
+      console.log("there was a problem" ,error)
+    }
+  };
+
+
    
 return (
     <>
@@ -143,7 +157,7 @@ return (
         <h2 className="font-bold">POPULAR GAMES</h2>
        <ul className=" flex flex-row ml-2 gap-1 md:items-stretch"> 
        {gamesList.map((game) => (
-         <li className="sixItemsPerRow text-center flex justify-center rounded-lg p-2 m-1  w-[200px] h-[150px]" style={{ 
+         <li  className="sixItemsPerRow text-center flex justify-center rounded-lg p-2 m-1  w-[200px] h-[150px]" style={{ 
            backgroundImage:`url(${game.imageUrl}`,
            backgroundSize:`cover`,
            backgroundColor:`red`,
