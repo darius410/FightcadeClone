@@ -67,7 +67,7 @@ const Sidebar = ({toggleNotifications, toggleUserSettings }) => {
 
            const user = auth.currentUser;
            console.log(user)
-       //* Future me continue to fetch the gamesarray from firebase user
+  
 
 
 const [userArray, setUserArray] = useState([]);
@@ -77,13 +77,13 @@ useEffect(() => {
 
                if(user){
            
-        const gamesArray = doc(db,"Users",user.uid)
-          const gamesArrayRef = collection(gamesArray, "gamesarray")
+        const gamesCollection = doc(db,"Users",user.uid)
+          const gamesCollectionRef = collection(gamesCollection, "gamesarray",)
         
               try{
                    
-                   const data = await getDocs(gamesArrayRef);
-                   console.log(gamesArrayRef)
+                   const data = await getDocs(gamesCollectionRef);
+                   console.log(gamesCollectionRef)
                    const dataArray = data.docs.map((doc) => ({
                       ...doc.data(),
                       id: doc.id,
@@ -104,12 +104,7 @@ useEffect(() => {
           getArrayOfGames();
          },[user]); 
     
-   
-    
-
-
-    // const [servername, setServerName] = useState(true);
-    // Making the text end with three periods
+  
  
 
     return (
