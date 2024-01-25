@@ -7,10 +7,10 @@ import { useRef,useEffect, useState } from "react";
 import { signOut } from "firebase/auth";
 import { authorize } from "../config/firebaseconfig";
 import { useNavigate } from "react-router-dom";
-import { getFirestore, onSnapshot } from "firebase/firestore";
+import { getFirestore, onSnapshot,serverTimestamp } from "firebase/firestore";
 import { collection, collectionGroup ,doc} from 'firebase/firestore';
 import { getAuth } from "firebase/auth";
-import { getDocs ,deleteDoc } from 'firebase/firestore';
+import { getDocs ,deleteDoc,updateDoc } from 'firebase/firestore';
 import { query, where } from "firebase/firestore";  
 // ?ICONS ICONS ICONS ICONS ICONS ICONS 
 import IconLogo from "../images/logo.svg"
@@ -48,6 +48,14 @@ const Sidebar = ({toggleNotifications, toggleUserSettings }) => {
         } catch (error) {
           console.error("Error removing document: ", error);
         }
+        
+        
+  //*Updates user login time
+  await updateDoc(deleteGameDocRef ,{
+      lastLogin:serverTimestamp(),
+     
+  })
+ console.log("Updated Login Time")
       };
 
         
