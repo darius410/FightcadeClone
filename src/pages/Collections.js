@@ -106,7 +106,9 @@ const MainDisplay = () => {
             return;
           }
           const gameDocRef = doc(gamesArrayRef, gameTitle)
-          await setDoc(gameDocRef  ,{});
+          await setDoc(gameDocRef  ,{
+            userInfo:arrayUnion("hello")
+          });
     console.log("Document written with ID: ", gamesListRef.id);   
     
     }catch(error){
