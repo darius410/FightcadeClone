@@ -43,9 +43,7 @@ const Register = () => {
             email: email,
             lastLogin: serverTimestamp(),
             username: username,
-            gamesarray: [ 
-            
-            ]
+          
           });
 
          

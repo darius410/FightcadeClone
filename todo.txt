@@ -38,5 +38,4 @@ MAIN LAYOUT
 --fix the hover effect for bottom icons to glow blue discord twitter facebook
 --add a search bar to the top of the collections page
 ------make the search have a function to search through and filter the results ass needed
---make the game items capable of being added to the sidebar 
-------make that same selection appear only for the user that is signed in currently 
+ 
