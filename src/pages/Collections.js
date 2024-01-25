@@ -4,8 +4,9 @@ import {TbCircleLetterR} from 'react-icons/tb'
 import { useState,useEffect } from "react"
 
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, serverTimestamp } from "firebase/firestore";
 import {getDocs ,getDoc,updateDoc, doc,setDoc,addDoc, collection,arrayUnion}from "firebase/firestore"
+import Sidebar from "./Sidebar";
 
 
 
@@ -105,10 +106,15 @@ const MainDisplay = () => {
             console.log("Game already in the user's list.");
             return;
           }
+          // *helps put games into the Sidebar
           const gameDocRef = doc(gamesArrayRef, gameTitle)
-          await setDoc(gameDocRef  ,{
-            userInfo:arrayUnion("hello")
+          await setDoc(gameDocRef,{
+           
           });
+          //*Updates user login time
+          await updateDoc(gamesListRef ,{
+            lastLogin:serverTimestamp()
+          })
     console.log("Document written with ID: ", gamesListRef.id);   
     
     }catch(error){
