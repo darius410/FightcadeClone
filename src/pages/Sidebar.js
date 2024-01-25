@@ -7,7 +7,7 @@ import { useRef,useEffect, useState } from "react";
 import { signOut } from "firebase/auth";
 import { authorize } from "../config/firebaseconfig";
 import { useNavigate } from "react-router-dom";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, onSnapshot } from "firebase/firestore";
 import { collection, collectionGroup ,doc} from 'firebase/firestore';
 import { getAuth } from "firebase/auth";
 import { getDocs ,deleteDoc } from 'firebase/firestore';
@@ -81,16 +81,17 @@ useEffect(() => {
           const gamesCollectionRef = collection(gamesCollection, "gamesarray",)
         
               try{
-                   
-                   const data = await getDocs(gamesCollectionRef);
-                   console.log(gamesCollectionRef)
-                   const dataArray = data.docs.map((doc) => ({
+                   const unsubscribe = onSnapshot(gamesCollectionRef, (snapshot) => {
+                       
+                   const dataArray = snapshot.docs.map((doc) => ({
                       ...doc.data(),
                       id: doc.id,
                       
               }));
                 console.log(dataArray)
                    setUserArray(dataArray)
+                   })
+               
               }
              catch (err){
               console.log(err);
@@ -98,11 +99,11 @@ useEffect(() => {
              
           };
         })
-     
+        
         }
         
           getArrayOfGames();
-         },[user]); 
+         },[user, db]); 
     
   
  
