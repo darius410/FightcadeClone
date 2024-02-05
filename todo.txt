@@ -1,7 +1,6 @@
 
 GENERAL
 --Apply media queries for the layout for smaller screens(IF NECASSARY)
---Find a way to protect the routes in browser router
 --make sure th user session deletes when logged out
 --Make sure to disallow framing (X-frame-Options:DENY) to prevent sites from 
     framing the entire site inside of an iframe object on another site
