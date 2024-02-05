@@ -1,4 +1,7 @@
 import { BrowserRouter, Routes,Route} from 'react-router-dom';
+
+import UserRouteProtection from "./components/UserRouteProtection"
+import { AuthContext } from "./context/AuthContext";
 //import { initializeApp } from 'firebase/app';
 //import {db} from './config/firebaseconfig'
 //import { authorize } from './config/firebaseconfig';
@@ -15,8 +18,9 @@ function App() {
 
 
   return (
+<AuthContext>
 
-    <BrowserRouter>
+  <BrowserRouter>
 
   
     <Routes> 
@@ -25,16 +29,38 @@ function App() {
         <Route path="Register" element={<Register/>} /> 
         <Route path="FightcadeClone" element={<Login/>} /> 
 
-        <Route path="Dashboard" element={<Dashboard />} > 
-          <Route path="MainDisplay" element={<MainDisplay />} /> 
-          <Route path="MainDisplay/LearnMore" element={<LearnMore />} /> 
+        
+            <Route path="Dashboard" 
+                   element={<UserRouteProtection>
+                              <Dashboard />
+                            </UserRouteProtection> }exact >
 
-          <Route path="Collections" element={<Collections />} /> 
+            <Route path="MainDisplay" 
+                  element={<UserRouteProtection>
+                              <MainDisplay />
+                          </UserRouteProtection>}exact/> 
+
+
+            <Route path="MainDisplay/LearnMore"
+             element={<UserRouteProtection>
+                          <LearnMore />
+                      </UserRouteProtection> }exact /> 
+
+            <Route path="Collections" 
+            element={<UserRouteProtection>
+                        <Collections />
+                    </UserRouteProtection>
+            } /> 
+       
+          
         </Route>
 
     </Routes>
   
 </BrowserRouter>
+</AuthContext>
+
+
     
     
   );
