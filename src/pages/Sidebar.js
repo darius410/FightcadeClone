@@ -41,13 +41,15 @@ const Sidebar = ({toggleNotifications, toggleUserSettings }) => {
 
       const removeGame = async (gameId) => {
         const deleteGameDocRef = doc(db, "Users", auth.currentUser.uid, "gamesarray", gameId);
-    
+        
         try {
           await deleteDoc(deleteGameDocRef);
           console.log(`Document with ID ${gameId} removed successfully`);
         } catch (error) {
           console.error("Error removing document: ", error);
         }
+        
+
         
         
   //*Updates user login time
