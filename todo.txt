@@ -9,6 +9,8 @@ GENERAL
 ------the user has an ID to verify thier database queries
 --404 pages need to be added for pages that don't have  proper urls
 --Do we need to include rate limiting??
+--Fix the number of allowed servers to be three or less
+--Make patreon members capable of getting six servers added.
 
 LOGIN
 --research any other authorizations techniques for login pages
