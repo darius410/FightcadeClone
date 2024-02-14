@@ -7,7 +7,7 @@ GENERAL
 --make sure to initiliaze a set of rules for production or locked mode in firebase
 ------the user should gett acces to the database
 ------the user has an ID to verify thier database queries
-
+--404 pages need to be added for pages that don't have  proper urls
 
 LOGIN
 --research any other authorizations techniques for login pages
