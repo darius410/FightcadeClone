@@ -8,6 +8,7 @@ GENERAL
 ------the user should gett acces to the database
 ------the user has an ID to verify thier database queries
 --404 pages need to be added for pages that don't have  proper urls
+--Do we need to include rate limiting??
 
 LOGIN
 --research any other authorizations techniques for login pages
