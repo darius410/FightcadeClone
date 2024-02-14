@@ -8,9 +8,9 @@ GENERAL
 ------the user should gett acces to the database
 ------the user has an ID to verify thier database queries
 
+
 LOGIN
 --research any other authorizations techniques for login pages
-
 
 
 REGISTRATION
@@ -18,6 +18,8 @@ REGISTRATION
 --Confirmation Page needs to show after registration 
 --Properly formatted Email check
 --Properley formatted password check
+--Add authentication to the inputs to verify the right data is being passed
+
 
 --Make the user profile picture capable of being selected from a list of prefered images  
 

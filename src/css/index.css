@@ -154,12 +154,14 @@
     .gameRoomContainer{
 position: relative;
 width:100px;
+padding-left:0px;
     display: inline-block;
       height:100px;
         text-align:center;
         justify-content:center;
         align-self:center;
         border:4px solid hsl(321,28%,41%);
+        transition: all 0.3s ease;
     }
  
     .gameRoomContainer:hover .icons {
@@ -232,6 +234,21 @@ width:100px;
     position:absolute;
     display:block;
 }
+.sideBarItem{
+    position:relative;
+    transition: transform 0.3s ease;
+    
+    opacity: 1;
+    
+}
+.sideBarItem.leave {
+    transform: translateX(100%);
+    opacity: 0; /* Opacity when removing item */
+    height: 0; /* You can also animate height */
+    left: 0px; /* You can also animate padding */
+    margin: 0; /* You can also animate margin */
+}
+
 
 input[type="checkbox"] {
   appearance: none;
