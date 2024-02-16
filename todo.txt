@@ -14,7 +14,7 @@ GENERAL
 
 LOGIN
 --research any other authorizations techniques for login pages
-
+--add authentication for login
 
 REGISTRATION
 --Email needs to be verified an sent to the user to confirm sign up/registration  
