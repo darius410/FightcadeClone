@@ -11,7 +11,8 @@ GENERAL
 --Do we need to include rate limiting??
 --Fix the number of allowed servers to be three or less
 --Make patreon members capable of getting six servers added.
-
+--Rewrite a better Read Me for instructions to how fightecade works.
+--Consider adding websockets for chat system usage.
 LOGIN
 --research any other authorizations techniques for login pages
 --add authentication for login
