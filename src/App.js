@@ -11,6 +11,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import LearnMore from './pages/LearnMore';
 import Collections from './pages/Collections';
+import ChatPage from './components/ChatPage';
 
  
 function App() {
@@ -49,6 +50,12 @@ function App() {
             <Route path="Collections" 
             element={<UserRouteProtection>
                         <Collections />
+                    </UserRouteProtection>
+            } /> 
+
+            <Route path="ChatPage" 
+            element={<UserRouteProtection>
+                        <ChatPage />
                     </UserRouteProtection>
             } /> 
        
