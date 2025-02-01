@@ -19,9 +19,9 @@ Fightcade comes with a custom GGPO implementation and other emulator improvement
 ![Socket.io](https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101)
 
 # Features
-Users can sign up using Google  or an email to get access to the dashboard
-Selecting the magnifying glass opens the entire library of games that can be accessed
-selecting a game adds its lobby to the left sidebar,each lobby has a chat room that users can interact with to find other players to play games with
-The games selected on the left are saved in a firebase database and updates as you select/remove games 
-Just like Fightacde there are a total of 3 games that can be accessed (unless you are a member of Patreon,but this has no Patreon access)
+* Users can sign up using Google  or an email to get access to the dashboard
+* Selecting the magnifying glass opens the entire library of games that can be accessed
+* selecting a game adds its lobby to the left sidebar,each lobby has a chat room that users can interact with to find other players to play games with
+* The games selected on the left are saved in a firebase database and updates as you select/remove games 
+* Just like Fightacde there are a total of 3 games that can be accessed (unless you are a member of Patreon,but this has no Patreon access)
 
