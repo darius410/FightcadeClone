@@ -1,6 +1,6 @@
-# Made with Tailwind and a passion for fighting games.
-
+# Made with Tailwind and a passion for fighting games.:joystick:
 TailwindCSS	![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+
 This is a simple layout exercise that I decided to do ever since getting into Tailwind.
 This application is a way for me to understand how a program like Fightcade would look and function if it were a web based application.
 #This is not a real version of Fightcade so please do yourself a favor and  support and download Fightcade below if you enjoy playing fighting games or retro games in general.
