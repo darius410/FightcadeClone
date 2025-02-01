@@ -11,14 +11,14 @@ Fightcade is a matchmaking application for playing retro games online, bundled w
 Fightcade comes with a custom GGPO implementation and other emulator improvements, making it the best platform for rollback-based P2P netplay. This means that demanding games in terms of input lag and responsiveness can be played over the internet with very little perceivable lag.
 
 ##DEVELOPMENT STACK
-ReactJS ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
-Firebase ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
-
-Sockect.io ![Socket.io](https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101)
+![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
+![Google](https://img.shields.io/badge/google-4285F4?style=for-the-badge&logo=google&logoColor=white)
+![Socket.io](https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101)
 
 ##Features
-Users can sign up using Google ![Google](https://img.shields.io/badge/google-4285F4?style=for-the-badge&logo=google&logoColor=white) or an email to get access to the dashboard
+Users can sign up using Google  or an email to get access to the dashboard
 Selecting the magnifying glass opens the entire library of games that can be accessed
 selecting a game adds its lobby to the left sidebar,each lobby has a chat room that users can interact with to find other players to play games with
 The games selected on the left are saved in a firebase database and updates as you select/remove games 
