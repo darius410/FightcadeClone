@@ -8,7 +8,7 @@ This application is a way for me to understand how a program like Fightcade woul
 ### This is not a real version of Fightcade so please do yourself a favor and  support and download Fightcade below if you enjoy playing fighting games or retro games in general.
 
 # What is Fightcade? - https://www.fightcade.com/
-<img src="github/darius410/fightcadeclone/src/images/fightacdeImage.png" />
+<img src="github/darius410/FightcadeClone/src/images/fightacdeImage.png" />
 Fightcade is a matchmaking application for playing retro games online, bundled with different emulators for seamless online play. Free, and without ads!
 
 Fightcade comes with a custom GGPO implementation and other emulator improvements, making it the best platform for rollback-based P2P netplay. This means that demanding games in terms of input lag and responsiveness can be played over the internet with very little perceivable lag.
