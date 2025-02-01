@@ -1,8 +1,10 @@
 # Made with Tailwind and a passion for fighting games. :joystick:
-![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+## LIVE DEMO - https://fightcade.netlify.app/
 
 This is a simple layout exercise that I decided to do ever since getting into Tailwind.
 This application is a way for me to understand how a program like Fightcade would look and function if it were a web based application.
+
+
 ### This is not a real version of Fightcade so please do yourself a favor and  support and download Fightcade below if you enjoy playing fighting games or retro games in general.
 
 # What is Fightcade? - https://www.fightcade.com/
@@ -12,7 +14,7 @@ Fightcade comes with a custom GGPO implementation and other emulator improvement
 
 # DEVELOPMENT STACK
 
-
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
 ![Google](https://img.shields.io/badge/google-4285F4?style=for-the-badge&logo=google&logoColor=white)
