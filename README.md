@@ -3,7 +3,7 @@
 
 This is a simple layout exercise that I decided to do ever since getting into Tailwind.
 This application is a way for me to understand how a program like Fightcade would look and function if it were a web based application.
-#This is not a real version of Fightcade so please do yourself a favor and  support and download Fightcade below if you enjoy playing fighting games or retro games in general.
+### This is not a real version of Fightcade so please do yourself a favor and  support and download Fightcade below if you enjoy playing fighting games or retro games in general.
 
 # What is Fightcade? - https://www.fightcade.com/
 Fightcade is a matchmaking application for playing retro games online, bundled with different emulators for seamless online play. Free, and without ads!
