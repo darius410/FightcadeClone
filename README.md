@@ -1,4 +1,4 @@
-##Made with Tailwind and a passion for fighting games.
+###Made with Tailwind and a passion for fighting games.
 
 TailwindCSS	![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 This is a simple layout exercise that I decided to do ever since getting into Tailwind.
@@ -10,9 +10,10 @@ Fightcade is a matchmaking application for playing retro games online, bundled w
 
 Fightcade comes with a custom GGPO implementation and other emulator improvements, making it the best platform for rollback-based P2P netplay. This means that demanding games in terms of input lag and responsiveness can be played over the internet with very little perceivable lag.
 
-##DEVELOPMENT STACK
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+###DEVELOPMENT STACK
 
+
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
 ![Google](https://img.shields.io/badge/google-4285F4?style=for-the-badge&logo=google&logoColor=white)
 ![Socket.io](https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101)
