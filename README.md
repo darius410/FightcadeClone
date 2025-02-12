@@ -2,7 +2,7 @@
 ## LIVE DEMO - https://fightcade.netlify.app/
 
 This is a simple layout exercise that I decided to do ever since getting into Tailwind.
-This application is a way for me to understand how a program like Fightcade would look and function if it were a web based application.
+This application is a way for me to understand how a program like Fightcade would look and function if it were a web-based application.
 
 
 ### This is not a real version of Fightcade so please do yourself a favor and  support and download Fightcade below if you enjoy playing fighting games or retro games in general.
@@ -25,7 +25,7 @@ This means that demanding games in terms of input lag and responsiveness can be 
 # Features
 * Users can sign up using Google  or an email to get access to the dashboard
 * Selecting the magnifying glass opens the entire library of games that can be accessed
-* selecting a game adds its lobby to the left sidebar,each lobby has a chat room that users can interact with to find other players to play games with
-* The games selected on the left are saved in a firebase database and updates as you select/remove games 
-* Just like Fightacde there are a total of 3 games that can be accessed (unless you are a member of Patreon,but this has no Patreon access)
+* Selecting a game adds its lobby to the left sidebar, each lobby has a chat room that users can interact with to find other players to play games with
+* The games selected on the left are saved in a Firebase database and update as you select/remove games 
+* Just like Fightacde there are a total of 3 games that can be accessed (unless you are a member of Patreon, but this has no Patreon access)
 
